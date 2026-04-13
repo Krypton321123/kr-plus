@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma-common"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("COMMON_URL")
+}
+
+model mstcmpnfo {
+  rowid    BigInt    @id @default(autoincrement())
+  cmpcd    String    @db.VarChar(50)
+  cmpnm    String?   @db.VarChar(250)
+  cmpshnm  String?   @db.VarChar(50)
+  cmpadr1  String?   @db.VarChar(500)
+  cmpadr2  String?   @db.VarChar(500)
+  cmpctycd String?   @db.VarChar(50)
+  cmpzipcd String?   @db.VarChar(6)
+  cmpphn   String?   @db.VarChar(100)
+  cmpfax   String?   @db.VarChar(100)
+  cmpeml   String?   @db.VarChar(100)
+  cmpweb   String?   @db.VarChar(100)
+  cmptinno String?   @db.VarChar(50)
+  cmptindt DateTime? @db.DateTime
+  cmptanno String?   @db.VarChar(50)
+  cmptandt DateTime? @db.DateTime
+  cmplstno String?   @db.VarChar(50)
+  cmplstdt DateTime? @db.DateTime
+  cmpcstno String?   @db.VarChar(50)
+  cmpcstdt DateTime? @db.DateTime
+  cmppanno String?   @db.VarChar(50)
+  cmppandt DateTime? @db.DateTime
+  cmpstno  String?   @db.VarChar(50)
+  cmpstdt  DateTime? @db.DateTime
+  cmpexno  String?   @db.VarChar(50)
+  cmpexdt  DateTime? @db.DateTime
+}
+
+model mstfinyear {
+  rowid     BigInt    @id @default(autoincrement())
+  cmpcd     String?   @db.VarChar(50)
+  finyear   String?   @db.VarChar(50)
+  startdate DateTime? @db.Date
+  enddate   DateTime? @db.Date
+}
+
+model admin {
+  id       String @id @default(cuid())
+  username String
+  password String
+
+  createdAt DateTime @default(now())
+}

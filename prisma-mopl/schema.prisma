@@ -1,0 +1,112 @@
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma-mopl"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      =  env("MOPL_URL")
+}
+
+model Unit {
+  rowid        Int   @id @default(autoincrement())
+
+  untcd        String
+  untnm        String
+  untshnm      String?
+  untcmpcd     String?
+  unttyp       String?
+  untledcd     String?
+  cshledcd     String?
+
+  untctempcd1  String?
+  untctmob1    String?
+  untctempcd2  String?
+  untctmob2    String?
+
+  untcomadr1   String?
+  untcomadr2   String?
+  untcomctycd  String?
+  cuntcomzipcd String?
+  untcomphn    String?
+  untcomfax    String?
+  untcomeml    String?
+  untcomweb    String?
+
+  untchkbil    Boolean?
+  untbiladr1   String?
+  untbiladr2   String?
+  untbilctycd  String?
+  cuntbilzipcd String?
+  untbilphn    String?
+  untbilfax    String?
+  untbileml    String?
+  untbilweb    String?
+
+  untchkshpbil Boolean?
+  untchkshpcom Boolean?
+  untshpadr1   String?
+  untshpadr2   String?
+  untshpctycd  String?
+  cuntshpzipcd String?
+  untshpphn    String?
+  untshpfax    String?
+  untshpeml    String?
+  untshpweb    String?
+
+  unttinno     String?
+  unttindt     DateTime?
+  unttanno     String?
+  unttandt     DateTime?
+  untlstno     String?
+  untlstdt     DateTime?
+  untcstno     String?
+  untcstdt     DateTime?
+  untpanno     String?
+  untpandt     DateTime?
+  untstno      String?
+  untstdt      DateTime?
+  untexno      String?
+  untexdt      DateTime?
+
+  untdispnm    String?
+
+  avgsale      Decimal?
+  days         Decimal?
+
+  mmluntcd     String?
+}
+
+model User {
+  rowid    Int      @id @default(autoincrement())
+
+  usrcd    String?
+  usrnm    String
+  usrshnm  String
+  bseuntcd String
+  usrcat   String
+  userCat  userCategory @relation(fields: [usrcat], references: [catcd])
+  pass     String
+  validdt  DateTime
+  dlock    String
+  msgenable String
+  untall   String
+  usertyp  String
+  userdep  String
+  sts      String
+  entusrnm String
+  entdt    DateTime
+}
+
+model userCategory {
+  rowid    Int      @id @default(autoincrement())
+
+  catcd    String?  @unique
+  catnm    String
+  sts      String
+  entusrnm String
+  entdt    DateTime
+
+  User     User[]
+}
