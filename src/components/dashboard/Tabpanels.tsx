@@ -3,11 +3,72 @@
 import { useTabStore } from "@/store/tabStore"
 import { HomePanelContent } from "./HomePanelContent"
 import { UsersPanelContent } from "../userCreation/UserPanelContent"
+import UserPermissionPanel from "../userPermission/UserPermissionPanel"
+import { CityPanelContent, StatePanelContent, StationPanelContent } from "../locations/LocationPanels"
+import { PartyCatPanelContent } from "../PartyCategory/PartyCategoryPanel"
+import { AreaPanelContent } from "../areaPanel/AreaPanel"
+import { DateLockPanelContent } from "../datelock/DateLockPanel"
+import LedgerGroupPage from "../ledgerGroup/LedgerGroup"
+import { ItemBrandPanelContent, ItemGroupPanelContent, ItemUnitPanelContent, MainCommodityPanelContent } from "../items/itemPanels"
+import { ItemSubGroupPanelContent } from "../items/subitemspanels"
+import { GodownPanelContent } from "../items/GodownPanel"
+import { CommodityPanelContent } from "../items/CommodityPanel"
+import { ItemTypePanelContent } from "../items/Itemtype"
+import { LedgerCategoryPanelContent } from "../ledgerCategory/LedgerCategory"
+import { ItemMasterContent } from "../items/ItemMasterPage"
+import { PrqSitCtgContent } from "../Prerequisites/Prerequsites"
+import CastePage from "../caste/CastePanel"
+import DepartmentPage from "../department/DepartmentPage"
+import { DesignationPanelContent } from "../designation/DesignationPanel"
+import { EmployeePanelContent } from "../employee/EmployeePanel"
+import { LedgerPanelContent } from "../Ledger/LedgerPanel"
+import { DepotBankPanelContent } from "../DepotBank/DepotBankPanel"
+import { PurParamPanelContent } from "../Purparam/PurParam"
+import AdvancePercentagePage from "../AdvancePer/AdvancePercentagePage"
+import PurchaseBrokeragePage from "../purchase/PurchaseBrokerPage"
+import { PoCatComPanelContent } from "../poCatCom/PoCatComPage"
+import { PurBrgPanelContent } from "../PurBrg/PurBrgContent"
+import { JournalVoucherContent } from "../Journal/JournalVocherContent"
+import PurchaseOrderBookingPage from "../purchase/PurchaseOrderBookingPage"
+import PurchaseOrderAuditPage from "../purchase/PurchaseAuditPage"
 
 
 const PANEL_MAP: Record<string, React.ReactNode> = {
     home: <HomePanelContent />,
-    users: <UsersPanelContent />
+    users: <UsersPanelContent />, 
+    permissions: <UserPermissionPanel />,
+    state: <StatePanelContent />, 
+    city: <CityPanelContent />,
+    station: <StationPanelContent />, 
+    partycat: <PartyCatPanelContent />,
+    area: <AreaPanelContent />,
+    datelock: <DateLockPanelContent />, 
+    ledgergroup: <LedgerGroupPage />,
+    itembrand: <ItemBrandPanelContent />,
+    maincommodity: <MainCommodityPanelContent />,
+    itemgroup: <ItemGroupPanelContent />,
+    itemUnit: <ItemUnitPanelContent />, 
+    itemsubgroup: <ItemSubGroupPanelContent />, 
+    commodity: <CommodityPanelContent />, 
+    godownmanage: <GodownPanelContent />, 
+    itemtype: <ItemTypePanelContent />,
+    accounttype: <LedgerCategoryPanelContent />, 
+    itemmaster: <ItemMasterContent />,
+    prereqmanage: <PrqSitCtgContent />, 
+    caste: <CastePage />,
+    department: <DepartmentPage />, 
+    designation: <DesignationPanelContent />,
+    employee: <EmployeePanelContent />,
+    Ledger: <LedgerPanelContent />,
+    depotbank: <DepotBankPanelContent />,
+    purparam: <PurParamPanelContent />, 
+    advperpage: <AdvancePercentagePage />,
+    purchasebrokerpage: <PurchaseBrokeragePage brkrgtyp="purchase" pageTitle="Purchase Brokerage" />,
+    pocatcom: <PoCatComPanelContent />,
+    purbrg: <PurBrgPanelContent />,
+    jvpage: <JournalVoucherContent />,
+    purorderbooking: <PurchaseOrderBookingPage />,
+    purauditpage: <PurchaseOrderAuditPage />
 }
 
 function PlaceholderPanel({ label }: { label: string }) {

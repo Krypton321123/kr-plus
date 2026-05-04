@@ -1,4 +1,3 @@
-
 generator client {
   provider = "prisma-client"
   output   = "../src/generated/prisma-mopl"
@@ -6,24 +5,24 @@ generator client {
 
 datasource db {
   provider = "sqlserver"
-  url      =  env("MOPL_URL")
+  url      = env("MOPL_URL")
 }
 
 model Unit {
-  rowid        Int   @id @default(autoincrement())
+  rowid Int @id @default(autoincrement())
 
-  untcd        String
-  untnm        String
-  untshnm      String?
-  untcmpcd     String?
-  unttyp       String?
-  untledcd     String?
-  cshledcd     String?
+  untcd    String
+  untnm    String
+  untshnm  String?
+  untcmpcd String?
+  unttyp   String?
+  untledcd String?
+  cshledcd String?
 
-  untctempcd1  String?
-  untctmob1    String?
-  untctempcd2  String?
-  untctmob2    String?
+  untctempcd1 String?
+  untctmob1   String?
+  untctempcd2 String?
+  untctmob2   String?
 
   untcomadr1   String?
   untcomadr2   String?
@@ -55,52 +54,56 @@ model Unit {
   untshpeml    String?
   untshpweb    String?
 
-  unttinno     String?
-  unttindt     DateTime?
-  unttanno     String?
-  unttandt     DateTime?
-  untlstno     String?
-  untlstdt     DateTime?
-  untcstno     String?
-  untcstdt     DateTime?
-  untpanno     String?
-  untpandt     DateTime?
-  untstno      String?
-  untstdt      DateTime?
-  untexno      String?
-  untexdt      DateTime?
+  unttinno String?
+  unttindt DateTime?
+  unttanno String?
+  unttandt DateTime?
+  untlstno String?
+  untlstdt DateTime?
+  untcstno String?
+  untcstdt DateTime?
+  untpanno String?
+  untpandt DateTime?
+  untstno  String?
+  untstdt  DateTime?
+  untexno  String?
+  untexdt  DateTime?
 
-  untdispnm    String?
+  untdispnm String?
 
-  avgsale      Decimal?
-  days         Decimal?
+  avgsale Decimal?
+  days    Decimal?
 
-  mmluntcd     String?
+  mmluntcd String?
+
+  userUnit userUnit[]
 }
 
 model User {
-  rowid    Int      @id @default(autoincrement())
+  rowid Int @id @default(autoincrement())
 
-  usrcd    String?
-  usrnm    String
-  usrshnm  String
-  bseuntcd String
-  usrcat   String
-  userCat  userCategory @relation(fields: [usrcat], references: [catcd])
-  pass     String
-  validdt  DateTime
-  dlock    String
-  msgenable String
-  untall   String
-  usertyp  String
-  userdep  String
-  sts      String
-  entusrnm String
-  entdt    DateTime
+  usrcd          String?
+  usrnm          String
+  usrshnm        String
+  bseuntcd       String
+  usrcat         String
+  userCat        userCategory @relation(fields: [usrcat], references: [catcd])
+  pass           String
+  validdt        DateTime
+  dlock          String
+  msgenable      String
+  untall         String
+  usertyp        String
+  userdep        String
+  sts            String
+  entusrnm       String
+  entdt          DateTime
+  allowedScreens userScreen[]
+  allowedUnits   userUnit[]
 }
 
 model userCategory {
-  rowid    Int      @id @default(autoincrement())
+  rowid Int @id @default(autoincrement())
 
   catcd    String?  @unique
   catnm    String
@@ -108,5 +111,673 @@ model userCategory {
   entusrnm String
   entdt    DateTime
 
-  User     User[]
+  User User[]
+}
+
+model userScreen {
+  rowid Int @id @default(autoincrement())
+
+  userId Int
+  user   User @relation(fields: [userId], references: [rowid])
+
+  screen Int
+  menu   mstMenuConfig @relation(fields: [screen], references: [rowid])
+
+  viewOnly Boolean @default(false)
+}
+
+model userUnit {
+  rowid Int @id @default(autoincrement())
+
+  userId Int
+  user   User @relation(fields: [userId], references: [rowid])
+
+  unit Int
+  Unit Unit @relation(fields: [unit], references: [rowid])
+}
+
+model mstMenuConfig {
+  rowid      Int          @id @default(autoincrement())
+  scrcd      String
+  scrnm      String
+  scrlnk     String
+  scrcat     String
+  scrtyp     String
+  scrmodcd   String
+  scrid      Int
+  scrpntid   Int
+  oldid      Int
+  userScreen userScreen[]
+}
+
+model mstpartycat {
+  rowid Int @id @default(autoincrement())
+
+  pcatcd String
+  pcatnm String
+}
+
+model mstareanfo {
+  rowid Int @id @default(autoincrement())
+
+  areacd    String
+  untcd     String
+  zipcd     String
+  areanm    String
+  areactycd String
+  areaday   String
+}
+
+model mstdatelocknfo {
+  rowid Int @id @default(autoincrement())
+
+  lockcd String
+  untcd  String
+  lockdt DateTime @db.Date
+  sts    String // Lock or Unlock
+}
+
+model mstledgrpnfo {
+  rowid       Int    @id @default(autoincrement())
+  ledgrpcd    String
+  ledgrplvlcd String
+  ledgrpnm    String
+  ledgrptyp   String
+  ledgrpid    Int
+  ledgrppntid Int
+}
+
+model mstitmbrdnfo {
+  rowid Int @id @default(autoincrement())
+
+  itmbrdcd   String
+  itmbrdnm   String
+  itmbrdshnm String
+}
+
+model mstitmmaincomnfo {
+  rowid Int @id @default(autoincrement())
+
+  itmmaincomcd   String
+  itmmaincomnm   String
+  itmmaincomshnm String
+}
+
+model mstitmcomnfo {
+  rowid Int @id @default(autoincrement())
+
+  itmcomcd     String
+  itmcomnm     String
+  itmcomshnm   String
+  itmcomtxcd   String
+  itmmaincomcd String
+
+  itcrate Int
+  stype   String
+  snature String
+
+  poreq        Int
+  ratetax      String
+  srcmng       String
+  rateautocalc String
+}
+
+model mstitmgrpnfo {
+  rowid Int @id @default(autoincrement())
+
+  itmgrpcd   String
+  itmgrpnm   String
+  itmgrpshnm String
+}
+
+model mstitmsubgrpnfo {
+  rowid Int @id @default(autoincrement())
+
+  itmsubgrpcd   String
+  itmsubgrpnm   String
+  itmsubgrpshnm String
+  itmgrpcd      String
+}
+
+model mstitmuntnfo {
+  rowid Int @id @default(autoincrement())
+
+  itmuntcd   String
+  itmuntnm   String
+  itmuntshnm String
+}
+
+model mstgwnnfo {
+  rowid Int @id @default(autoincrement())
+
+  untcd  String
+  gwncd  String
+  gwnnm  String
+  gwntyp String
+
+  hgt Int
+  rel Int
+
+  slsmancd String
+  drvcd    String
+  stkcat   String
+  mmlgwncd String
+}
+
+model mstgwnitmcomdetnfo {
+  rowid        Int    @id @default(autoincrement())
+  gwncd        String
+  itmmaincomcd String
+  itmcomcd     String
+}
+
+model mstitmtypnfo {
+  rowid Int @id @default(autoincrement())
+
+  itmtypcd String
+  itmtypnm String
+}
+
+model mstsyslednfo {
+  rowid Int @id @default(autoincrement())
+
+  sysledcd String
+  syslednm String
+}
+
+model mstitmnfo {
+  rowid        Int    @id @default(autoincrement())
+  itrmcd       String
+  itmnm        String
+  itmtypcd     String
+  itmgrpcd     String
+  itmsubgrpcd  String
+  itmcomcd     String
+  itmmaincomcd String
+  step         String
+  rateappon    String
+  stkmngin     String
+  ordmngin     String
+  autowgtcalc  String
+  wgtconv      Float
+  qtyitmunitcd String
+  wgtitmunitcd String
+  itmcat       String
+  itmsubcat    String
+  hsncode      String
+  itmcatgrp    String
+  fillitmcd    String
+  itmbrdcd     String
+  lsitmnm      String
+  lsitmunt     String
+  pcksz        Int
+  emtbxwgt     Float
+  poreq        String
+  smat         String
+  smatcd       String
+  pur          Float
+  man          Float
+  sale         Float
+  cons         Float
+  exc          Float
+  vat          Float
+  kit          Float
+  sttaxcatcd   String
+  cttaxcatcd   String
+  deprate      Float
+  uselife      Int
+}
+
+model mstledctnfo {
+  rowid        Int    @id @default(autoincrement())
+  ledctcd      String
+  ledctnm      String
+  sysledcd     String
+  ledgrpcd     String
+  ledctshtnm   String
+  itmcomcd     String
+  maildet      String
+  parentid     String
+  hasled       String // YES / NO
+  hasparties   String // YES / NO
+  showintrial  String // YES / NO
+  locwisemerge String // YES / NO
+}
+
+model mstprqsitsctgsinfo {
+  rowid Int @id @default(autoincrement())
+
+  prfcd   String
+  ctgname String
+  valtyp  String
+}
+
+model mstrlgnfo {
+  rowid Int @id @default(autoincrement())
+
+  rlgcd String
+  rlgnm String
+}
+
+model mstrlgcstnfo {
+  rowid Int @id @default(autoincrement())
+
+  rlgcstcd String
+  rlgcstnm String
+  rlgcd    String
+}
+
+model mstdeptnfo {
+  rowid     Int       @id @default(autoincrement())
+  untcd     String?
+  dptcd     String?
+  dptnm     String?
+  empcd     String?
+  wkoff     String?
+  wkoffday  String?
+  almlv     String?
+  nolv      Int?
+  alflv     String?
+  alnhd     String?
+  ernlv     String?
+  dismlv    String?
+  eldys     Int?
+  mldys     Int?
+  lnkpt     String?
+  ptcd      String?
+  dyshtsttm DateTime?
+  dyshtentm DateTime?
+  ntshtsttm DateTime?
+  ntshtentm DateTime?
+  ovapp     String?
+  hosttm    DateTime?
+  hoentm    DateTime?
+  horbtm1   DateTime?
+  horbtm2   DateTime?
+  horbtm3   DateTime?
+  horbdy1   Int?
+  horbdy2   Int?
+  horbdy3   Int?
+  horbhrs   Int?
+  rbhrsdys  Int?
+}
+
+model mstdeptprqlink {
+  rowid Int    @id @default(autoincrement())
+  dptcd String // FK → mstdeptnfo.dptcd
+  prfcd String // FK → mstprqsitsctgsinfo.prfcd
+}
+
+model mstdsgnfo {
+  rowid     Int     @id @default(autoincrement())
+  dsgcd     String
+  dsgnm     String
+  dsgcat    String
+  prntdsgcd String?
+}
+
+model mstempnfo {
+  rowid      Int      @id @default(autoincrement())
+  empcd      String
+  untcd      String
+  currdt     DateTime
+  entrydt    DateTime
+  empnm      String
+  fthnm      String
+  gender     String
+  dob        DateTime
+  rlgcstcd   String
+  corraddr1  String
+  corraddr2  String?
+  corrctycd  String
+  corrareanm String
+  corrphno   String?
+  peraddr1   String
+  peraddr2   String?
+  perctycd   String
+  perareanm  String
+  perphno    String?
+  mobno      String?
+  email      String?
+  prefby     String?
+  prefctno   String?
+  srefby     String?
+  srefctno   String?
+  jointyp    String
+  joindt     DateTime
+  dptcd      String
+  dsgcd      String
+  rptper     String?
+  paymod     String
+  bnkledcd   String?
+  bnkaccnm   String?
+  bnkaccno   String?
+  bscsal     Int
+  tmpgs      Int
+  pfded      String
+  empledcd   String
+  isactive   String
+}
+
+model mstempdetnfo {
+  rowid Int @id @default(autoincrement())
+
+  empcd  String
+  prfcd  String
+  prfval String
+}
+
+model mstlednfo {
+  rowid        Int       @id @default(autoincrement())
+  ledcd        String    @unique
+  acccd        String?
+  ledprfx      String?
+  lednm        String?
+  ledrptnm     String?
+  ledchqnm     String?
+  buntcd       String?
+  ledcrtdt     DateTime?
+  ledsts       String?
+  pcatcd       String?
+  per1prfx     String?
+  ctper1       String?
+  per2prfx     String?
+  ctper2       String?
+  cntno1       String?
+  cntno2       String?
+  ledadr1      String?
+  ctycd        String?
+  pincd        String?
+  areacd       String?
+  loccd        String?
+  ledadr2      String?
+  ctycd2       String?
+  pincd2       String?
+  email        String?
+  phone        String?
+  mobile       String?
+  fax          String?
+  paytyp       String?
+  bnkledcd     String?
+  stncd        String?
+  accno        String?
+  paystncd     String?
+  rtgsno       String?
+  cstno        String?
+  cstdt        DateTime?
+  lstno        String?
+  lstdt        DateTime?
+  tinno        String?
+  tindt        DateTime?
+  tanno        String?
+  tandt        DateTime?
+  panno        String?
+  pandt        DateTime?
+  stxno        String?
+  stxdt        DateTime?
+  ledtyp       String? // "CUSTOMER" | "SUPPLIER" | "OTHERS"
+  lmtamt       Float? // Note: If this represents currency, you may want to use Decimal or Float
+  consdays     Float?
+  bulkdays     Float?
+  othdays      Float?
+  rof          Float?
+  exmpt        String?
+  empcd        String?
+  mmlledcd     String?
+  aadharno     String?
+  aadharphoto  String?
+  pancardphoto String?
+  gstcertphoto String?
+}
+
+model mstledunitlink {
+  rowid Int    @id @default(autoincrement())
+  ledcd String // FK → mstlednfo.ledcd
+  untcd String // FK → Unit.untcd
+}
+
+model mstledcatnfo {
+  rowid   Int    @id @default(autoincrement())
+  ledcd   String // FK → mstlednfo.ledcd
+  ledctcd String // FK → mstledctnfo.ledctcd
+}
+
+model mstuntbanknfo {
+  rowid     Int      @id @default(autoincrement())
+  untcd     String
+  untwbcd   String
+  frmdt     DateTime
+  bankledcd String
+  hountcd   String
+  entusrnm  String
+  entdt     DateTime
+}
+
+model mstpurprmnfo {
+  rowid    Int      @id @default(autoincrement())
+  untcd    String
+  prmcd    String
+  itmcomcd String
+  fromdt   DateTime
+  toDt     DateTime
+  sts      String
+}
+
+model mstpurprmdetnfo {
+  rowid     Int    @id @default(autoincrement())
+  prmcd     String
+  cndprmnm  String
+  cndprmtyp String
+  inpprmnm  String
+  valtyp    String
+  clcon     String
+  prcusd    String
+}
+
+model mstadvpernfo {
+  rowid    Int      @id @default(autoincrement())
+  untcd    String
+  advpercd String
+  itmcomcd String
+  frmdt    DateTime
+  todt     DateTime
+  advper   String
+  entusrnm String
+  entdt    DateTime
+}
+
+model mstbrkgnfo {
+  rowid     Int      @id @default(autoincrement())
+  brkgcd    String
+  untcd     String
+  brkrgtyp  String
+  vfrom     DateTime
+  vto       DateTime
+  brkledcd  String
+  itmcomcd  String
+  pbrkgtyp  String
+  pbrkgval  Int
+  mbrkgtyp  String
+  mbrkgval  Int
+  slbrkgval Int
+  sts       String
+}
+
+model mstpocatcomnfo {
+  rowid        Int      @id @default(autoincrement())
+  untcd        String
+  pocatcomcd   String
+  pocatcomnm   String
+  prmcd        String
+  cattyp       String
+  itmcomcd     String
+  fromdt       DateTime
+  todt         DateTime
+  wgtreq       String
+  shtdis       Int
+  duedys       Int
+  duedyscng    String
+  smat         String
+  frghttyp     String
+  billdiff_ded String
+  shortage_ded String
+  bill_type    String
+  conddesc     String
+}
+
+model mstpocatcomdetnfo {
+  rowid      Int    @id @default(autoincrement())
+  pocatcomcd String
+  cndprmnm   String
+  cmnprmval  Int
+  cndprmded  Int
+  cndprmrate String
+}
+
+model mstpurbrgnfo {
+  rowid      Int      @id @default(autoincrement())
+  untcd      String
+  purbrgcd   String
+  purbrgdt   DateTime
+  pocatcomcd String
+  itmcd      String
+  brgqty     Int
+  brgrate    Int
+  conddays   Int
+  condrate   Int
+  mblbrg     String
+  apprateid  Int
+  sts        String
+}
+
+model mstclmfrnfo {
+  rowid    Int      @id @default(autoincrement())
+  untcd    String
+  fyear    String
+  frcd     String
+  itmcomcd String
+  fromdt   DateTime
+  todt     DateTime
+  sts      String
+}
+
+model mstclmfrdetnfo {
+  rowid    Int    @id @default(autoincrement())
+  frcd     String
+  frdesc   String
+  cndprmnm String
+  inpprmnm String
+  hidezero String
+  clcdisp  String
+  frdet    String
+}
+
+model trnjvnfo {
+  rowid Int      @id @default(autoincrement())
+  untcd String
+  jvcd  String
+  jvdt  DateTime
+  mode  String
+}
+
+model trnjvdetnfo {
+  rowid   Int    @id @default(autoincrement())
+  jvcd    String
+  ledcd   String
+  lednarr String
+  amtdr   Int
+  amtcr   Int
+}
+
+model trnpurordnfo {
+  rowid        Int       @id @default(autoincrement())
+  untcd        String?
+  pocd         String?
+  catpocd      String?
+  ptypocd      String?
+  brkpocd      String?
+  pocatcomcd   String?
+  posupcatcd   String?
+  podt         DateTime?
+  potyp        String?
+  posupat      String?
+  poptyledcd   String?
+  pobrkledcd   String?
+  socd         String?
+  pofrttyp     String?
+  frgt         Int?
+  validdt      DateTime?
+  custledcd    String?
+  pobknauditcd String?
+  remark       String?
+  dlydt        DateTime?
+}
+
+model trnpurordbknnfo {
+  rowid      Int       @id @default(autoincrement())
+  untcd      String?
+  pobkncd    String?
+  pobkndt    DateTime?
+  dlydt      DateTime?
+  pocatcomcd String?
+  valdt      DateTime?
+  purbrgcd   String?
+  frmcd      String?
+  supat      String?
+  custledcd  String?
+  socd       String?
+  usrnm      String?
+  remark     String?
+  apporderid Int?
+}
+
+model trnpurordbkndetnfo {
+  rowid     Int     @id @default(autoincrement())
+  pobkncd   String?
+  ptyledcd  String?
+  brkrledcd String?
+  nof       Int?
+  itmcd     String?
+  qty       Int?
+  wgt       Int?
+  frgttyp   String?
+  ratetyp   String?
+  frgt      Int?
+  rate      Int?
+}
+
+model trnpurordbknauditnfo {
+  rowid        Int       @id @default(autoincrement())
+  untcd        String?
+  pobknauditcd String?
+  pobknauditdt DateTime?
+  pobkncd      String?
+  usrnm        String?
+  sts          String? // Approved or Reject
+  reason       String?
+}
+
+model trnpurordbknauditdetnfo {
+  rowid        Int     @id @default(autoincrement())
+  pobknauditcd String?
+  ptyledcd     String?
+  brkrledcd    String?
+  nof          Int?
+  itmcd        String?
+  qty          Int?
+  wgt          Int?
+  frgttyp      String?
+  ratetyp      String?
+  frgt         Int?
+  rate         Int?
+}
+
+model trnpurorddetnfo {
+  rowid   Int     @id @default(autoincrement())
+  pocd    String?
+  poitmcd String?
+  poqty   Int?
+  powgt   Int?
+  porate  Int?
+  ratetyp String?
 }

@@ -640,6 +640,7 @@ export type UnitWhereInput = {
   avgsale?: Prisma.DecimalNullableFilter<"Unit"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   days?: Prisma.DecimalNullableFilter<"Unit"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   mmluntcd?: Prisma.StringNullableFilter<"Unit"> | string | null
+  userUnit?: Prisma.UserUnitListRelationFilter
 }
 
 export type UnitOrderByWithRelationInput = {
@@ -700,6 +701,7 @@ export type UnitOrderByWithRelationInput = {
   avgsale?: Prisma.SortOrderInput | Prisma.SortOrder
   days?: Prisma.SortOrderInput | Prisma.SortOrder
   mmluntcd?: Prisma.SortOrderInput | Prisma.SortOrder
+  userUnit?: Prisma.userUnitOrderByRelationAggregateInput
 }
 
 export type UnitWhereUniqueInput = Prisma.AtLeast<{
@@ -763,6 +765,7 @@ export type UnitWhereUniqueInput = Prisma.AtLeast<{
   avgsale?: Prisma.DecimalNullableFilter<"Unit"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   days?: Prisma.DecimalNullableFilter<"Unit"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   mmluntcd?: Prisma.StringNullableFilter<"Unit"> | string | null
+  userUnit?: Prisma.UserUnitListRelationFilter
 }, "rowid">
 
 export type UnitOrderByWithAggregationInput = {
@@ -950,6 +953,7 @@ export type UnitCreateInput = {
   avgsale?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   days?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   mmluntcd?: string | null
+  userUnit?: Prisma.userUnitCreateNestedManyWithoutUnitInput
 }
 
 export type UnitUncheckedCreateInput = {
@@ -1010,6 +1014,7 @@ export type UnitUncheckedCreateInput = {
   avgsale?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   days?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   mmluntcd?: string | null
+  userUnit?: Prisma.userUnitUncheckedCreateNestedManyWithoutUnitInput
 }
 
 export type UnitUpdateInput = {
@@ -1069,6 +1074,7 @@ export type UnitUpdateInput = {
   avgsale?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   days?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   mmluntcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  userUnit?: Prisma.userUnitUpdateManyWithoutUnitNestedInput
 }
 
 export type UnitUncheckedUpdateInput = {
@@ -1129,6 +1135,7 @@ export type UnitUncheckedUpdateInput = {
   avgsale?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   days?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   mmluntcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  userUnit?: Prisma.userUnitUncheckedUpdateManyWithoutUnitNestedInput
 }
 
 export type UnitCreateManyInput = {
@@ -1501,6 +1508,11 @@ export type UnitSumOrderByAggregateInput = {
   days?: Prisma.SortOrder
 }
 
+export type UnitScalarRelationFilter = {
+  is?: Prisma.UnitWhereInput
+  isNot?: Prisma.UnitWhereInput
+}
+
 export type StringFieldUpdateOperationsInput = {
   set?: string
 }
@@ -1533,6 +1545,303 @@ export type IntFieldUpdateOperationsInput = {
   divide?: number
 }
 
+export type UnitCreateNestedOneWithoutUserUnitInput = {
+  create?: Prisma.XOR<Prisma.UnitCreateWithoutUserUnitInput, Prisma.UnitUncheckedCreateWithoutUserUnitInput>
+  connectOrCreate?: Prisma.UnitCreateOrConnectWithoutUserUnitInput
+  connect?: Prisma.UnitWhereUniqueInput
+}
+
+export type UnitUpdateOneRequiredWithoutUserUnitNestedInput = {
+  create?: Prisma.XOR<Prisma.UnitCreateWithoutUserUnitInput, Prisma.UnitUncheckedCreateWithoutUserUnitInput>
+  connectOrCreate?: Prisma.UnitCreateOrConnectWithoutUserUnitInput
+  upsert?: Prisma.UnitUpsertWithoutUserUnitInput
+  connect?: Prisma.UnitWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UnitUpdateToOneWithWhereWithoutUserUnitInput, Prisma.UnitUpdateWithoutUserUnitInput>, Prisma.UnitUncheckedUpdateWithoutUserUnitInput>
+}
+
+export type UnitCreateWithoutUserUnitInput = {
+  untcd: string
+  untnm: string
+  untshnm?: string | null
+  untcmpcd?: string | null
+  unttyp?: string | null
+  untledcd?: string | null
+  cshledcd?: string | null
+  untctempcd1?: string | null
+  untctmob1?: string | null
+  untctempcd2?: string | null
+  untctmob2?: string | null
+  untcomadr1?: string | null
+  untcomadr2?: string | null
+  untcomctycd?: string | null
+  cuntcomzipcd?: string | null
+  untcomphn?: string | null
+  untcomfax?: string | null
+  untcomeml?: string | null
+  untcomweb?: string | null
+  untchkbil?: boolean | null
+  untbiladr1?: string | null
+  untbiladr2?: string | null
+  untbilctycd?: string | null
+  cuntbilzipcd?: string | null
+  untbilphn?: string | null
+  untbilfax?: string | null
+  untbileml?: string | null
+  untbilweb?: string | null
+  untchkshpbil?: boolean | null
+  untchkshpcom?: boolean | null
+  untshpadr1?: string | null
+  untshpadr2?: string | null
+  untshpctycd?: string | null
+  cuntshpzipcd?: string | null
+  untshpphn?: string | null
+  untshpfax?: string | null
+  untshpeml?: string | null
+  untshpweb?: string | null
+  unttinno?: string | null
+  unttindt?: Date | string | null
+  unttanno?: string | null
+  unttandt?: Date | string | null
+  untlstno?: string | null
+  untlstdt?: Date | string | null
+  untcstno?: string | null
+  untcstdt?: Date | string | null
+  untpanno?: string | null
+  untpandt?: Date | string | null
+  untstno?: string | null
+  untstdt?: Date | string | null
+  untexno?: string | null
+  untexdt?: Date | string | null
+  untdispnm?: string | null
+  avgsale?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  days?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  mmluntcd?: string | null
+}
+
+export type UnitUncheckedCreateWithoutUserUnitInput = {
+  rowid?: number
+  untcd: string
+  untnm: string
+  untshnm?: string | null
+  untcmpcd?: string | null
+  unttyp?: string | null
+  untledcd?: string | null
+  cshledcd?: string | null
+  untctempcd1?: string | null
+  untctmob1?: string | null
+  untctempcd2?: string | null
+  untctmob2?: string | null
+  untcomadr1?: string | null
+  untcomadr2?: string | null
+  untcomctycd?: string | null
+  cuntcomzipcd?: string | null
+  untcomphn?: string | null
+  untcomfax?: string | null
+  untcomeml?: string | null
+  untcomweb?: string | null
+  untchkbil?: boolean | null
+  untbiladr1?: string | null
+  untbiladr2?: string | null
+  untbilctycd?: string | null
+  cuntbilzipcd?: string | null
+  untbilphn?: string | null
+  untbilfax?: string | null
+  untbileml?: string | null
+  untbilweb?: string | null
+  untchkshpbil?: boolean | null
+  untchkshpcom?: boolean | null
+  untshpadr1?: string | null
+  untshpadr2?: string | null
+  untshpctycd?: string | null
+  cuntshpzipcd?: string | null
+  untshpphn?: string | null
+  untshpfax?: string | null
+  untshpeml?: string | null
+  untshpweb?: string | null
+  unttinno?: string | null
+  unttindt?: Date | string | null
+  unttanno?: string | null
+  unttandt?: Date | string | null
+  untlstno?: string | null
+  untlstdt?: Date | string | null
+  untcstno?: string | null
+  untcstdt?: Date | string | null
+  untpanno?: string | null
+  untpandt?: Date | string | null
+  untstno?: string | null
+  untstdt?: Date | string | null
+  untexno?: string | null
+  untexdt?: Date | string | null
+  untdispnm?: string | null
+  avgsale?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  days?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  mmluntcd?: string | null
+}
+
+export type UnitCreateOrConnectWithoutUserUnitInput = {
+  where: Prisma.UnitWhereUniqueInput
+  create: Prisma.XOR<Prisma.UnitCreateWithoutUserUnitInput, Prisma.UnitUncheckedCreateWithoutUserUnitInput>
+}
+
+export type UnitUpsertWithoutUserUnitInput = {
+  update: Prisma.XOR<Prisma.UnitUpdateWithoutUserUnitInput, Prisma.UnitUncheckedUpdateWithoutUserUnitInput>
+  create: Prisma.XOR<Prisma.UnitCreateWithoutUserUnitInput, Prisma.UnitUncheckedCreateWithoutUserUnitInput>
+  where?: Prisma.UnitWhereInput
+}
+
+export type UnitUpdateToOneWithWhereWithoutUserUnitInput = {
+  where?: Prisma.UnitWhereInput
+  data: Prisma.XOR<Prisma.UnitUpdateWithoutUserUnitInput, Prisma.UnitUncheckedUpdateWithoutUserUnitInput>
+}
+
+export type UnitUpdateWithoutUserUnitInput = {
+  untcd?: Prisma.StringFieldUpdateOperationsInput | string
+  untnm?: Prisma.StringFieldUpdateOperationsInput | string
+  untshnm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untcmpcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  unttyp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untledcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cshledcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untctempcd1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untctmob1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untctempcd2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untctmob2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untcomadr1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untcomadr2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untcomctycd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cuntcomzipcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untcomphn?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untcomfax?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untcomeml?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untcomweb?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untchkbil?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  untbiladr1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untbiladr2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untbilctycd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cuntbilzipcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untbilphn?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untbilfax?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untbileml?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untbilweb?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untchkshpbil?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  untchkshpcom?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  untshpadr1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untshpadr2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untshpctycd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cuntshpzipcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untshpphn?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untshpfax?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untshpeml?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untshpweb?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  unttinno?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  unttindt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  unttanno?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  unttandt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untlstno?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untlstdt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untcstno?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untcstdt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untpanno?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untpandt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untstno?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untstdt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untexno?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untexdt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untdispnm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avgsale?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  days?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  mmluntcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+export type UnitUncheckedUpdateWithoutUserUnitInput = {
+  rowid?: Prisma.IntFieldUpdateOperationsInput | number
+  untcd?: Prisma.StringFieldUpdateOperationsInput | string
+  untnm?: Prisma.StringFieldUpdateOperationsInput | string
+  untshnm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untcmpcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  unttyp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untledcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cshledcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untctempcd1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untctmob1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untctempcd2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untctmob2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untcomadr1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untcomadr2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untcomctycd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cuntcomzipcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untcomphn?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untcomfax?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untcomeml?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untcomweb?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untchkbil?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  untbiladr1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untbiladr2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untbilctycd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cuntbilzipcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untbilphn?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untbilfax?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untbileml?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untbilweb?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untchkshpbil?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  untchkshpcom?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  untshpadr1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untshpadr2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untshpctycd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cuntshpzipcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untshpphn?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untshpfax?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untshpeml?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untshpweb?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  unttinno?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  unttindt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  unttanno?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  unttandt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untlstno?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untlstdt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untcstno?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untcstdt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untpanno?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untpandt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untstno?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untstdt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untexno?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  untexdt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  untdispnm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avgsale?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  days?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
+  mmluntcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+
+/**
+ * Count Type UnitCountOutputType
+ */
+
+export type UnitCountOutputType = {
+  userUnit: number
+}
+
+export type UnitCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  userUnit?: boolean | UnitCountOutputTypeCountUserUnitArgs
+}
+
+/**
+ * UnitCountOutputType without action
+ */
+export type UnitCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the UnitCountOutputType
+   */
+  select?: Prisma.UnitCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * UnitCountOutputType without action
+ */
+export type UnitCountOutputTypeCountUserUnitArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.userUnitWhereInput
+}
 
 
 export type UnitSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1593,6 +1902,8 @@ export type UnitSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   avgsale?: boolean
   days?: boolean
   mmluntcd?: boolean
+  userUnit?: boolean | Prisma.Unit$userUnitArgs<ExtArgs>
+  _count?: boolean | Prisma.UnitCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["unit"]>
 
 
@@ -1658,10 +1969,16 @@ export type UnitSelectScalar = {
 }
 
 export type UnitOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"rowid" | "untcd" | "untnm" | "untshnm" | "untcmpcd" | "unttyp" | "untledcd" | "cshledcd" | "untctempcd1" | "untctmob1" | "untctempcd2" | "untctmob2" | "untcomadr1" | "untcomadr2" | "untcomctycd" | "cuntcomzipcd" | "untcomphn" | "untcomfax" | "untcomeml" | "untcomweb" | "untchkbil" | "untbiladr1" | "untbiladr2" | "untbilctycd" | "cuntbilzipcd" | "untbilphn" | "untbilfax" | "untbileml" | "untbilweb" | "untchkshpbil" | "untchkshpcom" | "untshpadr1" | "untshpadr2" | "untshpctycd" | "cuntshpzipcd" | "untshpphn" | "untshpfax" | "untshpeml" | "untshpweb" | "unttinno" | "unttindt" | "unttanno" | "unttandt" | "untlstno" | "untlstdt" | "untcstno" | "untcstdt" | "untpanno" | "untpandt" | "untstno" | "untstdt" | "untexno" | "untexdt" | "untdispnm" | "avgsale" | "days" | "mmluntcd", ExtArgs["result"]["unit"]>
+export type UnitInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  userUnit?: boolean | Prisma.Unit$userUnitArgs<ExtArgs>
+  _count?: boolean | Prisma.UnitCountOutputTypeDefaultArgs<ExtArgs>
+}
 
 export type $UnitPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Unit"
-  objects: {}
+  objects: {
+    userUnit: Prisma.$userUnitPayload<ExtArgs>[]
+  }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     rowid: number
     untcd: string
@@ -2060,6 +2377,7 @@ readonly fields: UnitFieldRefs;
  */
 export interface Prisma__UnitClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  userUnit<T extends Prisma.Unit$userUnitArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Unit$userUnitArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$userUnitPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2163,6 +2481,10 @@ export type UnitFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.Internal
    */
   omit?: Prisma.UnitOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UnitInclude<ExtArgs> | null
+  /**
    * Filter, which Unit to fetch.
    */
   where: Prisma.UnitWhereUniqueInput
@@ -2181,6 +2503,10 @@ export type UnitFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.I
    */
   omit?: Prisma.UnitOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UnitInclude<ExtArgs> | null
+  /**
    * Filter, which Unit to fetch.
    */
   where: Prisma.UnitWhereUniqueInput
@@ -2198,6 +2524,10 @@ export type UnitFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalA
    * Omit specific fields from the Unit
    */
   omit?: Prisma.UnitOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UnitInclude<ExtArgs> | null
   /**
    * Filter, which Unit to fetch.
    */
@@ -2247,6 +2577,10 @@ export type UnitFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.In
    */
   omit?: Prisma.UnitOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UnitInclude<ExtArgs> | null
+  /**
    * Filter, which Unit to fetch.
    */
   where?: Prisma.UnitWhereInput
@@ -2295,6 +2629,10 @@ export type UnitFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
    */
   omit?: Prisma.UnitOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UnitInclude<ExtArgs> | null
+  /**
    * Filter, which Units to fetch.
    */
   where?: Prisma.UnitWhereInput
@@ -2338,6 +2676,10 @@ export type UnitCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs
    */
   omit?: Prisma.UnitOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UnitInclude<ExtArgs> | null
+  /**
    * The data needed to create a Unit.
    */
   data: Prisma.XOR<Prisma.UnitCreateInput, Prisma.UnitUncheckedCreateInput>
@@ -2365,6 +2707,10 @@ export type UnitUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs
    * Omit specific fields from the Unit
    */
   omit?: Prisma.UnitOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UnitInclude<ExtArgs> | null
   /**
    * The data needed to update a Unit.
    */
@@ -2406,6 +2752,10 @@ export type UnitUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs
    */
   omit?: Prisma.UnitOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UnitInclude<ExtArgs> | null
+  /**
    * The filter to search for the Unit to update in case it exists.
    */
   where: Prisma.UnitWhereUniqueInput
@@ -2432,6 +2782,10 @@ export type UnitDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs
    */
   omit?: Prisma.UnitOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UnitInclude<ExtArgs> | null
+  /**
    * Filter which Unit to delete.
    */
   where: Prisma.UnitWhereUniqueInput
@@ -2452,6 +2806,30 @@ export type UnitDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Internal
 }
 
 /**
+ * Unit.userUnit
+ */
+export type Unit$userUnitArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the userUnit
+   */
+  select?: Prisma.userUnitSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the userUnit
+   */
+  omit?: Prisma.userUnitOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.userUnitInclude<ExtArgs> | null
+  where?: Prisma.userUnitWhereInput
+  orderBy?: Prisma.userUnitOrderByWithRelationInput | Prisma.userUnitOrderByWithRelationInput[]
+  cursor?: Prisma.userUnitWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.UserUnitScalarFieldEnum | Prisma.UserUnitScalarFieldEnum[]
+}
+
+/**
  * Unit without action
  */
 export type UnitDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2463,4 +2841,8 @@ export type UnitDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
    * Omit specific fields from the Unit
    */
   omit?: Prisma.UnitOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UnitInclude<ExtArgs> | null
 }

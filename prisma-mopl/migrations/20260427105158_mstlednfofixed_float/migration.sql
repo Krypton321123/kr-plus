@@ -1,0 +1,23 @@
+BEGIN TRY
+
+BEGIN TRAN;
+
+-- AlterTable
+ALTER TABLE [dbo].[mstlednfo] ALTER COLUMN [lmtamt] FLOAT(53) NULL;
+ALTER TABLE [dbo].[mstlednfo] ALTER COLUMN [consdays] FLOAT(53) NULL;
+ALTER TABLE [dbo].[mstlednfo] ALTER COLUMN [bulkdays] FLOAT(53) NULL;
+ALTER TABLE [dbo].[mstlednfo] ALTER COLUMN [othdays] FLOAT(53) NULL;
+ALTER TABLE [dbo].[mstlednfo] ALTER COLUMN [rof] FLOAT(53) NULL;
+
+COMMIT TRAN;
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN;
+END;
+THROW
+
+END CATCH

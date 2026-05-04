@@ -13,6 +13,7 @@ model mstcmpnfo {
   cmpcd    String    @db.VarChar(50)
   cmpnm    String?   @db.VarChar(250)
   cmpshnm  String?   @db.VarChar(50)
+  cmpvchcdno String?
   cmpadr1  String?   @db.VarChar(500)
   cmpadr2  String?   @db.VarChar(500)
   cmpctycd String?   @db.VarChar(50)
@@ -51,4 +52,27 @@ model admin {
   password String
 
   createdAt DateTime @default(now())
+}
+
+model mstState { 
+  rowid     Int @default(autoincrement()) @id
+  stcd      String 
+  stnm     String 
+  stshnm    String
+}
+
+model mstCity {
+  rowid     Int   @default(autoincrement()) @id
+  ctycd     String 
+  ctynm     String 
+  ctystcd   String 
+  ctystncd  String
+}
+
+model mstStn {
+  rowid   Int   @id @default(autoincrement()) 
+
+  stncd  String 
+  stnnm  String
+  
 }

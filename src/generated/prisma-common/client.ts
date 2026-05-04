@@ -54,3 +54,23 @@ export type mstcmpnfo = Prisma.mstcmpnfoModel
  * 
  */
 export type mstfinyear = Prisma.mstfinyearModel
+/**
+ * Model admin
+ * 
+ */
+export type admin = Prisma.adminModel
+/**
+ * Model mstState
+ * 
+ */
+export type mstState = Prisma.mstStateModel
+/**
+ * Model mstCity
+ * 
+ */
+export type mstCity = Prisma.mstCityModel
+/**
+ * Model mstStn
+ * 
+ */
+export type mstStn = Prisma.mstStnModel

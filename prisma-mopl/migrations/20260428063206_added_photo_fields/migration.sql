@@ -1,0 +1,22 @@
+BEGIN TRY
+
+BEGIN TRAN;
+
+-- AlterTable
+ALTER TABLE [dbo].[mstlednfo] ADD [aadharno] NVARCHAR(1000),
+[aadharphoto] NVARCHAR(1000),
+[gstcertphoto] NVARCHAR(1000),
+[pancardphoto] NVARCHAR(1000);
+
+COMMIT TRAN;
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN;
+END;
+THROW
+
+END CATCH

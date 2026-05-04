@@ -17,8 +17,8 @@ export function Topbar() {
     return (
         <header className="fixed top-0 left-0 right-0 h-12 z-50 bg-white border-b border-[#E8E6E1] flex items-center">
             {/* Brand */}
-            <div className="w-[220px] flex items-center gap-2 px-4 border-r border-[#E8E6E1] h-full flex-shrink-0">
-                <div className="w-6 h-6 bg-[#1a1a1a] rounded-[5px] flex items-center justify-center flex-shrink-0">
+            <div className="w-55 flex items-center gap-2 px-4 border-r border-[#E8E6E1] h-full shrink-0">
+                <div className="w-6 h-6 bg-[#1a1a1a] rounded-[5px] flex items-center justify-center shrink-0">
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                         <rect x="1" y="1" width="4" height="4" rx="1" fill="white" opacity="0.9" />
                         <rect x="7" y="1" width="4" height="4" rx="1" fill="white" opacity="0.5" />
@@ -26,13 +26,13 @@ export function Topbar() {
                         <rect x="7" y="7" width="4" height="4" rx="1" fill="white" opacity="0.9" />
                     </svg>
                 </div>
-                <span className="text-[11px] font-semibold tracking-[0.1em] uppercase text-[#1a1a1a]">APS</span>
+                <span className="text-[11px] font-semibold tracking-widest uppercase text-[#1a1a1a]">APS</span>
             </div>
 
             {/* Session meta */}
             <div className="flex items-center flex-1 px-4 gap-0">
                 <div className="flex items-center gap-1.5 px-3 h-7 border-r border-[#E8E6E1] text-[12px] text-[#888]">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 shrink-0" />
                     Logged in as <span className="text-[#1a1a1a] font-medium ml-1">{user?.username ?? "—"}</span>
                 </div>
                 <div className="flex items-center px-3 h-7 border-r border-[#E8E6E1] text-[12px] text-[#888]">

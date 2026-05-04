@@ -1,0 +1,24 @@
+BEGIN TRY
+
+BEGIN TRAN;
+
+-- CreateTable
+CREATE TABLE [dbo].[mstStn] (
+    [rowid] INT NOT NULL IDENTITY(1,1),
+    [stncd] NVARCHAR(1000) NOT NULL,
+    [stnnm] NVARCHAR(1000) NOT NULL,
+    CONSTRAINT [mstStn_pkey] PRIMARY KEY CLUSTERED ([rowid])
+);
+
+COMMIT TRAN;
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN;
+END;
+THROW
+
+END CATCH

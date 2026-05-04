@@ -305,6 +305,8 @@ export type UserWhereInput = {
   entusrnm?: Prisma.StringFilter<"User"> | string
   entdt?: Prisma.DateTimeFilter<"User"> | Date | string
   userCat?: Prisma.XOR<Prisma.UserCategoryScalarRelationFilter, Prisma.userCategoryWhereInput>
+  allowedScreens?: Prisma.UserScreenListRelationFilter
+  allowedUnits?: Prisma.UserUnitListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -325,6 +327,8 @@ export type UserOrderByWithRelationInput = {
   entusrnm?: Prisma.SortOrder
   entdt?: Prisma.SortOrder
   userCat?: Prisma.userCategoryOrderByWithRelationInput
+  allowedScreens?: Prisma.userScreenOrderByRelationAggregateInput
+  allowedUnits?: Prisma.userUnitOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -348,6 +352,8 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   entusrnm?: Prisma.StringFilter<"User"> | string
   entdt?: Prisma.DateTimeFilter<"User"> | Date | string
   userCat?: Prisma.XOR<Prisma.UserCategoryScalarRelationFilter, Prisma.userCategoryWhereInput>
+  allowedScreens?: Prisma.UserScreenListRelationFilter
+  allowedUnits?: Prisma.UserUnitListRelationFilter
 }, "rowid">
 
 export type UserOrderByWithAggregationInput = {
@@ -412,6 +418,8 @@ export type UserCreateInput = {
   entusrnm: string
   entdt: Date | string
   userCat: Prisma.userCategoryCreateNestedOneWithoutUserInput
+  allowedScreens?: Prisma.userScreenCreateNestedManyWithoutUserInput
+  allowedUnits?: Prisma.userUnitCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -431,6 +439,8 @@ export type UserUncheckedCreateInput = {
   sts: string
   entusrnm: string
   entdt: Date | string
+  allowedScreens?: Prisma.userScreenUncheckedCreateNestedManyWithoutUserInput
+  allowedUnits?: Prisma.userUnitUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserUpdateInput = {
@@ -449,6 +459,8 @@ export type UserUpdateInput = {
   entusrnm?: Prisma.StringFieldUpdateOperationsInput | string
   entdt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   userCat?: Prisma.userCategoryUpdateOneRequiredWithoutUserNestedInput
+  allowedScreens?: Prisma.userScreenUpdateManyWithoutUserNestedInput
+  allowedUnits?: Prisma.userUnitUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -468,6 +480,8 @@ export type UserUncheckedUpdateInput = {
   sts?: Prisma.StringFieldUpdateOperationsInput | string
   entusrnm?: Prisma.StringFieldUpdateOperationsInput | string
   entdt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  allowedScreens?: Prisma.userScreenUncheckedUpdateManyWithoutUserNestedInput
+  allowedUnits?: Prisma.userUnitUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -599,6 +613,11 @@ export type UserOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
+export type UserScalarRelationFilter = {
+  is?: Prisma.UserWhereInput
+  isNot?: Prisma.UserWhereInput
+}
+
 export type DateTimeFieldUpdateOperationsInput = {
   set?: Date | string
 }
@@ -645,6 +664,34 @@ export type UserUncheckedUpdateManyWithoutUserCatNestedInput = {
   deleteMany?: Prisma.UserScalarWhereInput | Prisma.UserScalarWhereInput[]
 }
 
+export type UserCreateNestedOneWithoutAllowedScreensInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutAllowedScreensInput, Prisma.UserUncheckedCreateWithoutAllowedScreensInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutAllowedScreensInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutAllowedScreensNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutAllowedScreensInput, Prisma.UserUncheckedCreateWithoutAllowedScreensInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutAllowedScreensInput
+  upsert?: Prisma.UserUpsertWithoutAllowedScreensInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutAllowedScreensInput, Prisma.UserUpdateWithoutAllowedScreensInput>, Prisma.UserUncheckedUpdateWithoutAllowedScreensInput>
+}
+
+export type UserCreateNestedOneWithoutAllowedUnitsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutAllowedUnitsInput, Prisma.UserUncheckedCreateWithoutAllowedUnitsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutAllowedUnitsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutAllowedUnitsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutAllowedUnitsInput, Prisma.UserUncheckedCreateWithoutAllowedUnitsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutAllowedUnitsInput
+  upsert?: Prisma.UserUpsertWithoutAllowedUnitsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutAllowedUnitsInput, Prisma.UserUpdateWithoutAllowedUnitsInput>, Prisma.UserUncheckedUpdateWithoutAllowedUnitsInput>
+}
+
 export type UserCreateWithoutUserCatInput = {
   usrcd?: string | null
   usrnm: string
@@ -660,6 +707,8 @@ export type UserCreateWithoutUserCatInput = {
   sts: string
   entusrnm: string
   entdt: Date | string
+  allowedScreens?: Prisma.userScreenCreateNestedManyWithoutUserInput
+  allowedUnits?: Prisma.userUnitCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutUserCatInput = {
@@ -678,6 +727,8 @@ export type UserUncheckedCreateWithoutUserCatInput = {
   sts: string
   entusrnm: string
   entdt: Date | string
+  allowedScreens?: Prisma.userScreenUncheckedCreateNestedManyWithoutUserInput
+  allowedUnits?: Prisma.userUnitUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutUserCatInput = {
@@ -727,6 +778,194 @@ export type UserScalarWhereInput = {
   entdt?: Prisma.DateTimeFilter<"User"> | Date | string
 }
 
+export type UserCreateWithoutAllowedScreensInput = {
+  usrcd?: string | null
+  usrnm: string
+  usrshnm: string
+  bseuntcd: string
+  pass: string
+  validdt: Date | string
+  dlock: string
+  msgenable: string
+  untall: string
+  usertyp: string
+  userdep: string
+  sts: string
+  entusrnm: string
+  entdt: Date | string
+  userCat: Prisma.userCategoryCreateNestedOneWithoutUserInput
+  allowedUnits?: Prisma.userUnitCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutAllowedScreensInput = {
+  rowid?: number
+  usrcd?: string | null
+  usrnm: string
+  usrshnm: string
+  bseuntcd: string
+  usrcat: string
+  pass: string
+  validdt: Date | string
+  dlock: string
+  msgenable: string
+  untall: string
+  usertyp: string
+  userdep: string
+  sts: string
+  entusrnm: string
+  entdt: Date | string
+  allowedUnits?: Prisma.userUnitUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutAllowedScreensInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutAllowedScreensInput, Prisma.UserUncheckedCreateWithoutAllowedScreensInput>
+}
+
+export type UserUpsertWithoutAllowedScreensInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutAllowedScreensInput, Prisma.UserUncheckedUpdateWithoutAllowedScreensInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutAllowedScreensInput, Prisma.UserUncheckedCreateWithoutAllowedScreensInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutAllowedScreensInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutAllowedScreensInput, Prisma.UserUncheckedUpdateWithoutAllowedScreensInput>
+}
+
+export type UserUpdateWithoutAllowedScreensInput = {
+  usrcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  usrnm?: Prisma.StringFieldUpdateOperationsInput | string
+  usrshnm?: Prisma.StringFieldUpdateOperationsInput | string
+  bseuntcd?: Prisma.StringFieldUpdateOperationsInput | string
+  pass?: Prisma.StringFieldUpdateOperationsInput | string
+  validdt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dlock?: Prisma.StringFieldUpdateOperationsInput | string
+  msgenable?: Prisma.StringFieldUpdateOperationsInput | string
+  untall?: Prisma.StringFieldUpdateOperationsInput | string
+  usertyp?: Prisma.StringFieldUpdateOperationsInput | string
+  userdep?: Prisma.StringFieldUpdateOperationsInput | string
+  sts?: Prisma.StringFieldUpdateOperationsInput | string
+  entusrnm?: Prisma.StringFieldUpdateOperationsInput | string
+  entdt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  userCat?: Prisma.userCategoryUpdateOneRequiredWithoutUserNestedInput
+  allowedUnits?: Prisma.userUnitUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutAllowedScreensInput = {
+  rowid?: Prisma.IntFieldUpdateOperationsInput | number
+  usrcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  usrnm?: Prisma.StringFieldUpdateOperationsInput | string
+  usrshnm?: Prisma.StringFieldUpdateOperationsInput | string
+  bseuntcd?: Prisma.StringFieldUpdateOperationsInput | string
+  usrcat?: Prisma.StringFieldUpdateOperationsInput | string
+  pass?: Prisma.StringFieldUpdateOperationsInput | string
+  validdt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dlock?: Prisma.StringFieldUpdateOperationsInput | string
+  msgenable?: Prisma.StringFieldUpdateOperationsInput | string
+  untall?: Prisma.StringFieldUpdateOperationsInput | string
+  usertyp?: Prisma.StringFieldUpdateOperationsInput | string
+  userdep?: Prisma.StringFieldUpdateOperationsInput | string
+  sts?: Prisma.StringFieldUpdateOperationsInput | string
+  entusrnm?: Prisma.StringFieldUpdateOperationsInput | string
+  entdt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  allowedUnits?: Prisma.userUnitUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutAllowedUnitsInput = {
+  usrcd?: string | null
+  usrnm: string
+  usrshnm: string
+  bseuntcd: string
+  pass: string
+  validdt: Date | string
+  dlock: string
+  msgenable: string
+  untall: string
+  usertyp: string
+  userdep: string
+  sts: string
+  entusrnm: string
+  entdt: Date | string
+  userCat: Prisma.userCategoryCreateNestedOneWithoutUserInput
+  allowedScreens?: Prisma.userScreenCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutAllowedUnitsInput = {
+  rowid?: number
+  usrcd?: string | null
+  usrnm: string
+  usrshnm: string
+  bseuntcd: string
+  usrcat: string
+  pass: string
+  validdt: Date | string
+  dlock: string
+  msgenable: string
+  untall: string
+  usertyp: string
+  userdep: string
+  sts: string
+  entusrnm: string
+  entdt: Date | string
+  allowedScreens?: Prisma.userScreenUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutAllowedUnitsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutAllowedUnitsInput, Prisma.UserUncheckedCreateWithoutAllowedUnitsInput>
+}
+
+export type UserUpsertWithoutAllowedUnitsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutAllowedUnitsInput, Prisma.UserUncheckedUpdateWithoutAllowedUnitsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutAllowedUnitsInput, Prisma.UserUncheckedCreateWithoutAllowedUnitsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutAllowedUnitsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutAllowedUnitsInput, Prisma.UserUncheckedUpdateWithoutAllowedUnitsInput>
+}
+
+export type UserUpdateWithoutAllowedUnitsInput = {
+  usrcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  usrnm?: Prisma.StringFieldUpdateOperationsInput | string
+  usrshnm?: Prisma.StringFieldUpdateOperationsInput | string
+  bseuntcd?: Prisma.StringFieldUpdateOperationsInput | string
+  pass?: Prisma.StringFieldUpdateOperationsInput | string
+  validdt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dlock?: Prisma.StringFieldUpdateOperationsInput | string
+  msgenable?: Prisma.StringFieldUpdateOperationsInput | string
+  untall?: Prisma.StringFieldUpdateOperationsInput | string
+  usertyp?: Prisma.StringFieldUpdateOperationsInput | string
+  userdep?: Prisma.StringFieldUpdateOperationsInput | string
+  sts?: Prisma.StringFieldUpdateOperationsInput | string
+  entusrnm?: Prisma.StringFieldUpdateOperationsInput | string
+  entdt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  userCat?: Prisma.userCategoryUpdateOneRequiredWithoutUserNestedInput
+  allowedScreens?: Prisma.userScreenUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutAllowedUnitsInput = {
+  rowid?: Prisma.IntFieldUpdateOperationsInput | number
+  usrcd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  usrnm?: Prisma.StringFieldUpdateOperationsInput | string
+  usrshnm?: Prisma.StringFieldUpdateOperationsInput | string
+  bseuntcd?: Prisma.StringFieldUpdateOperationsInput | string
+  usrcat?: Prisma.StringFieldUpdateOperationsInput | string
+  pass?: Prisma.StringFieldUpdateOperationsInput | string
+  validdt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  dlock?: Prisma.StringFieldUpdateOperationsInput | string
+  msgenable?: Prisma.StringFieldUpdateOperationsInput | string
+  untall?: Prisma.StringFieldUpdateOperationsInput | string
+  usertyp?: Prisma.StringFieldUpdateOperationsInput | string
+  userdep?: Prisma.StringFieldUpdateOperationsInput | string
+  sts?: Prisma.StringFieldUpdateOperationsInput | string
+  entusrnm?: Prisma.StringFieldUpdateOperationsInput | string
+  entdt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  allowedScreens?: Prisma.userScreenUncheckedUpdateManyWithoutUserNestedInput
+}
+
 export type UserCreateManyUserCatInput = {
   usrcd?: string | null
   usrnm: string
@@ -759,6 +998,8 @@ export type UserUpdateWithoutUserCatInput = {
   sts?: Prisma.StringFieldUpdateOperationsInput | string
   entusrnm?: Prisma.StringFieldUpdateOperationsInput | string
   entdt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  allowedScreens?: Prisma.userScreenUpdateManyWithoutUserNestedInput
+  allowedUnits?: Prisma.userUnitUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutUserCatInput = {
@@ -777,6 +1018,8 @@ export type UserUncheckedUpdateWithoutUserCatInput = {
   sts?: Prisma.StringFieldUpdateOperationsInput | string
   entusrnm?: Prisma.StringFieldUpdateOperationsInput | string
   entdt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  allowedScreens?: Prisma.userScreenUncheckedUpdateManyWithoutUserNestedInput
+  allowedUnits?: Prisma.userUnitUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateManyWithoutUserCatInput = {
@@ -798,6 +1041,44 @@ export type UserUncheckedUpdateManyWithoutUserCatInput = {
 }
 
 
+/**
+ * Count Type UserCountOutputType
+ */
+
+export type UserCountOutputType = {
+  allowedScreens: number
+  allowedUnits: number
+}
+
+export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  allowedScreens?: boolean | UserCountOutputTypeCountAllowedScreensArgs
+  allowedUnits?: boolean | UserCountOutputTypeCountAllowedUnitsArgs
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the UserCountOutputType
+   */
+  select?: Prisma.UserCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountAllowedScreensArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.userScreenWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountAllowedUnitsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.userUnitWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   rowid?: boolean
@@ -817,6 +1098,9 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   entusrnm?: boolean
   entdt?: boolean
   userCat?: boolean | Prisma.userCategoryDefaultArgs<ExtArgs>
+  allowedScreens?: boolean | Prisma.User$allowedScreensArgs<ExtArgs>
+  allowedUnits?: boolean | Prisma.User$allowedUnitsArgs<ExtArgs>
+  _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
 
@@ -843,12 +1127,17 @@ export type UserSelectScalar = {
 export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"rowid" | "usrcd" | "usrnm" | "usrshnm" | "bseuntcd" | "usrcat" | "pass" | "validdt" | "dlock" | "msgenable" | "untall" | "usertyp" | "userdep" | "sts" | "entusrnm" | "entdt", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   userCat?: boolean | Prisma.userCategoryDefaultArgs<ExtArgs>
+  allowedScreens?: boolean | Prisma.User$allowedScreensArgs<ExtArgs>
+  allowedUnits?: boolean | Prisma.User$allowedUnitsArgs<ExtArgs>
+  _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 
 export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "User"
   objects: {
     userCat: Prisma.$userCategoryPayload<ExtArgs>
+    allowedScreens: Prisma.$userScreenPayload<ExtArgs>[]
+    allowedUnits: Prisma.$userUnitPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     rowid: number
@@ -1208,6 +1497,8 @@ readonly fields: UserFieldRefs;
 export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   userCat<T extends Prisma.userCategoryDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.userCategoryDefaultArgs<ExtArgs>>): Prisma.Prisma__userCategoryClient<runtime.Types.Result.GetResult<Prisma.$userCategoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  allowedScreens<T extends Prisma.User$allowedScreensArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$allowedScreensArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$userScreenPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  allowedUnits<T extends Prisma.User$allowedUnitsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$allowedUnitsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$userUnitPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1592,6 +1883,54 @@ export type UserDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Internal
    * Limit how many Users to delete.
    */
   limit?: number
+}
+
+/**
+ * User.allowedScreens
+ */
+export type User$allowedScreensArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the userScreen
+   */
+  select?: Prisma.userScreenSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the userScreen
+   */
+  omit?: Prisma.userScreenOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.userScreenInclude<ExtArgs> | null
+  where?: Prisma.userScreenWhereInput
+  orderBy?: Prisma.userScreenOrderByWithRelationInput | Prisma.userScreenOrderByWithRelationInput[]
+  cursor?: Prisma.userScreenWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.UserScreenScalarFieldEnum | Prisma.UserScreenScalarFieldEnum[]
+}
+
+/**
+ * User.allowedUnits
+ */
+export type User$allowedUnitsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the userUnit
+   */
+  select?: Prisma.userUnitSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the userUnit
+   */
+  omit?: Prisma.userUnitOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.userUnitInclude<ExtArgs> | null
+  where?: Prisma.userUnitWhereInput
+  orderBy?: Prisma.userUnitOrderByWithRelationInput | Prisma.userUnitOrderByWithRelationInput[]
+  cursor?: Prisma.userUnitWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.UserUnitScalarFieldEnum | Prisma.UserUnitScalarFieldEnum[]
 }
 
 /**

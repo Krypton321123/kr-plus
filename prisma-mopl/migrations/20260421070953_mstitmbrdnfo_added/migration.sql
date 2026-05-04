@@ -1,0 +1,25 @@
+BEGIN TRY
+
+BEGIN TRAN;
+
+-- CreateTable
+CREATE TABLE [dbo].[mstitmbrdnfo] (
+    [rowid] INT NOT NULL IDENTITY(1,1),
+    [itmbrdcd] NVARCHAR(1000) NOT NULL,
+    [itmbrdnm] NVARCHAR(1000) NOT NULL,
+    [itmbrdshnm] NVARCHAR(1000) NOT NULL,
+    CONSTRAINT [mstitmbrdnfo_pkey] PRIMARY KEY CLUSTERED ([rowid])
+);
+
+COMMIT TRAN;
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN;
+END;
+THROW
+
+END CATCH

@@ -1,0 +1,29 @@
+BEGIN TRY
+
+BEGIN TRAN;
+
+-- CreateTable
+CREATE TABLE [dbo].[mstuntbanknfo] (
+    [rowid] INT NOT NULL IDENTITY(1,1),
+    [untcd] NVARCHAR(1000) NOT NULL,
+    [untwbcd] NVARCHAR(1000) NOT NULL,
+    [frmdt] DATETIME2 NOT NULL,
+    [bankledcd] NVARCHAR(1000) NOT NULL,
+    [hountcd] NVARCHAR(1000) NOT NULL,
+    [entusrnm] NVARCHAR(1000) NOT NULL,
+    [entdt] DATETIME2 NOT NULL,
+    CONSTRAINT [mstuntbanknfo_pkey] PRIMARY KEY CLUSTERED ([rowid])
+);
+
+COMMIT TRAN;
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN;
+END;
+THROW
+
+END CATCH

@@ -1,0 +1,26 @@
+BEGIN TRY
+
+BEGIN TRAN;
+
+-- CreateTable
+CREATE TABLE [dbo].[trnjvnfo] (
+    [rowid] INT NOT NULL IDENTITY(1,1),
+    [untcd] NVARCHAR(1000) NOT NULL,
+    [jvcd] NVARCHAR(1000) NOT NULL,
+    [jvdt] DATETIME2 NOT NULL,
+    [mode] NVARCHAR(1000) NOT NULL,
+    CONSTRAINT [trnjvnfo_pkey] PRIMARY KEY CLUSTERED ([rowid])
+);
+
+COMMIT TRAN;
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN;
+END;
+THROW
+
+END CATCH

@@ -39,6 +39,7 @@ export type MstcmpnfoMinAggregateOutputType = {
   cmpcd: string | null
   cmpnm: string | null
   cmpshnm: string | null
+  cmpvchcdno: string | null
   cmpadr1: string | null
   cmpadr2: string | null
   cmpctycd: string | null
@@ -68,6 +69,7 @@ export type MstcmpnfoMaxAggregateOutputType = {
   cmpcd: string | null
   cmpnm: string | null
   cmpshnm: string | null
+  cmpvchcdno: string | null
   cmpadr1: string | null
   cmpadr2: string | null
   cmpctycd: string | null
@@ -97,6 +99,7 @@ export type MstcmpnfoCountAggregateOutputType = {
   cmpcd: number
   cmpnm: number
   cmpshnm: number
+  cmpvchcdno: number
   cmpadr1: number
   cmpadr2: number
   cmpctycd: number
@@ -136,6 +139,7 @@ export type MstcmpnfoMinAggregateInputType = {
   cmpcd?: true
   cmpnm?: true
   cmpshnm?: true
+  cmpvchcdno?: true
   cmpadr1?: true
   cmpadr2?: true
   cmpctycd?: true
@@ -165,6 +169,7 @@ export type MstcmpnfoMaxAggregateInputType = {
   cmpcd?: true
   cmpnm?: true
   cmpshnm?: true
+  cmpvchcdno?: true
   cmpadr1?: true
   cmpadr2?: true
   cmpctycd?: true
@@ -194,6 +199,7 @@ export type MstcmpnfoCountAggregateInputType = {
   cmpcd?: true
   cmpnm?: true
   cmpshnm?: true
+  cmpvchcdno?: true
   cmpadr1?: true
   cmpadr2?: true
   cmpctycd?: true
@@ -310,6 +316,7 @@ export type MstcmpnfoGroupByOutputType = {
   cmpcd: string
   cmpnm: string | null
   cmpshnm: string | null
+  cmpvchcdno: string | null
   cmpadr1: string | null
   cmpadr2: string | null
   cmpctycd: string | null
@@ -362,6 +369,7 @@ export type mstcmpnfoWhereInput = {
   cmpcd?: Prisma.StringFilter<"mstcmpnfo"> | string
   cmpnm?: Prisma.StringNullableFilter<"mstcmpnfo"> | string | null
   cmpshnm?: Prisma.StringNullableFilter<"mstcmpnfo"> | string | null
+  cmpvchcdno?: Prisma.StringNullableFilter<"mstcmpnfo"> | string | null
   cmpadr1?: Prisma.StringNullableFilter<"mstcmpnfo"> | string | null
   cmpadr2?: Prisma.StringNullableFilter<"mstcmpnfo"> | string | null
   cmpctycd?: Prisma.StringNullableFilter<"mstcmpnfo"> | string | null
@@ -391,6 +399,7 @@ export type mstcmpnfoOrderByWithRelationInput = {
   cmpcd?: Prisma.SortOrder
   cmpnm?: Prisma.SortOrderInput | Prisma.SortOrder
   cmpshnm?: Prisma.SortOrderInput | Prisma.SortOrder
+  cmpvchcdno?: Prisma.SortOrderInput | Prisma.SortOrder
   cmpadr1?: Prisma.SortOrderInput | Prisma.SortOrder
   cmpadr2?: Prisma.SortOrderInput | Prisma.SortOrder
   cmpctycd?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -423,6 +432,7 @@ export type mstcmpnfoWhereUniqueInput = Prisma.AtLeast<{
   cmpcd?: Prisma.StringFilter<"mstcmpnfo"> | string
   cmpnm?: Prisma.StringNullableFilter<"mstcmpnfo"> | string | null
   cmpshnm?: Prisma.StringNullableFilter<"mstcmpnfo"> | string | null
+  cmpvchcdno?: Prisma.StringNullableFilter<"mstcmpnfo"> | string | null
   cmpadr1?: Prisma.StringNullableFilter<"mstcmpnfo"> | string | null
   cmpadr2?: Prisma.StringNullableFilter<"mstcmpnfo"> | string | null
   cmpctycd?: Prisma.StringNullableFilter<"mstcmpnfo"> | string | null
@@ -452,6 +462,7 @@ export type mstcmpnfoOrderByWithAggregationInput = {
   cmpcd?: Prisma.SortOrder
   cmpnm?: Prisma.SortOrderInput | Prisma.SortOrder
   cmpshnm?: Prisma.SortOrderInput | Prisma.SortOrder
+  cmpvchcdno?: Prisma.SortOrderInput | Prisma.SortOrder
   cmpadr1?: Prisma.SortOrderInput | Prisma.SortOrder
   cmpadr2?: Prisma.SortOrderInput | Prisma.SortOrder
   cmpctycd?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -489,6 +500,7 @@ export type mstcmpnfoScalarWhereWithAggregatesInput = {
   cmpcd?: Prisma.StringWithAggregatesFilter<"mstcmpnfo"> | string
   cmpnm?: Prisma.StringNullableWithAggregatesFilter<"mstcmpnfo"> | string | null
   cmpshnm?: Prisma.StringNullableWithAggregatesFilter<"mstcmpnfo"> | string | null
+  cmpvchcdno?: Prisma.StringNullableWithAggregatesFilter<"mstcmpnfo"> | string | null
   cmpadr1?: Prisma.StringNullableWithAggregatesFilter<"mstcmpnfo"> | string | null
   cmpadr2?: Prisma.StringNullableWithAggregatesFilter<"mstcmpnfo"> | string | null
   cmpctycd?: Prisma.StringNullableWithAggregatesFilter<"mstcmpnfo"> | string | null
@@ -518,6 +530,7 @@ export type mstcmpnfoCreateInput = {
   cmpcd: string
   cmpnm?: string | null
   cmpshnm?: string | null
+  cmpvchcdno?: string | null
   cmpadr1?: string | null
   cmpadr2?: string | null
   cmpctycd?: string | null
@@ -547,6 +560,7 @@ export type mstcmpnfoUncheckedCreateInput = {
   cmpcd: string
   cmpnm?: string | null
   cmpshnm?: string | null
+  cmpvchcdno?: string | null
   cmpadr1?: string | null
   cmpadr2?: string | null
   cmpctycd?: string | null
@@ -576,6 +590,7 @@ export type mstcmpnfoUpdateInput = {
   cmpcd?: Prisma.StringFieldUpdateOperationsInput | string
   cmpnm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   cmpshnm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cmpvchcdno?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   cmpadr1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   cmpadr2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   cmpctycd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -605,6 +620,7 @@ export type mstcmpnfoUncheckedUpdateInput = {
   cmpcd?: Prisma.StringFieldUpdateOperationsInput | string
   cmpnm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   cmpshnm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cmpvchcdno?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   cmpadr1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   cmpadr2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   cmpctycd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -633,6 +649,7 @@ export type mstcmpnfoCreateManyInput = {
   cmpcd: string
   cmpnm?: string | null
   cmpshnm?: string | null
+  cmpvchcdno?: string | null
   cmpadr1?: string | null
   cmpadr2?: string | null
   cmpctycd?: string | null
@@ -662,6 +679,7 @@ export type mstcmpnfoUpdateManyMutationInput = {
   cmpcd?: Prisma.StringFieldUpdateOperationsInput | string
   cmpnm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   cmpshnm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cmpvchcdno?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   cmpadr1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   cmpadr2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   cmpctycd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -691,6 +709,7 @@ export type mstcmpnfoUncheckedUpdateManyInput = {
   cmpcd?: Prisma.StringFieldUpdateOperationsInput | string
   cmpnm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   cmpshnm?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cmpvchcdno?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   cmpadr1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   cmpadr2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   cmpctycd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -720,6 +739,7 @@ export type mstcmpnfoCountOrderByAggregateInput = {
   cmpcd?: Prisma.SortOrder
   cmpnm?: Prisma.SortOrder
   cmpshnm?: Prisma.SortOrder
+  cmpvchcdno?: Prisma.SortOrder
   cmpadr1?: Prisma.SortOrder
   cmpadr2?: Prisma.SortOrder
   cmpctycd?: Prisma.SortOrder
@@ -753,6 +773,7 @@ export type mstcmpnfoMaxOrderByAggregateInput = {
   cmpcd?: Prisma.SortOrder
   cmpnm?: Prisma.SortOrder
   cmpshnm?: Prisma.SortOrder
+  cmpvchcdno?: Prisma.SortOrder
   cmpadr1?: Prisma.SortOrder
   cmpadr2?: Prisma.SortOrder
   cmpctycd?: Prisma.SortOrder
@@ -782,6 +803,7 @@ export type mstcmpnfoMinOrderByAggregateInput = {
   cmpcd?: Prisma.SortOrder
   cmpnm?: Prisma.SortOrder
   cmpshnm?: Prisma.SortOrder
+  cmpvchcdno?: Prisma.SortOrder
   cmpadr1?: Prisma.SortOrder
   cmpadr2?: Prisma.SortOrder
   cmpctycd?: Prisma.SortOrder
@@ -837,6 +859,7 @@ export type mstcmpnfoSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   cmpcd?: boolean
   cmpnm?: boolean
   cmpshnm?: boolean
+  cmpvchcdno?: boolean
   cmpadr1?: boolean
   cmpadr2?: boolean
   cmpctycd?: boolean
@@ -868,6 +891,7 @@ export type mstcmpnfoSelectScalar = {
   cmpcd?: boolean
   cmpnm?: boolean
   cmpshnm?: boolean
+  cmpvchcdno?: boolean
   cmpadr1?: boolean
   cmpadr2?: boolean
   cmpctycd?: boolean
@@ -892,7 +916,7 @@ export type mstcmpnfoSelectScalar = {
   cmpexdt?: boolean
 }
 
-export type mstcmpnfoOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"rowid" | "cmpcd" | "cmpnm" | "cmpshnm" | "cmpadr1" | "cmpadr2" | "cmpctycd" | "cmpzipcd" | "cmpphn" | "cmpfax" | "cmpeml" | "cmpweb" | "cmptinno" | "cmptindt" | "cmptanno" | "cmptandt" | "cmplstno" | "cmplstdt" | "cmpcstno" | "cmpcstdt" | "cmppanno" | "cmppandt" | "cmpstno" | "cmpstdt" | "cmpexno" | "cmpexdt", ExtArgs["result"]["mstcmpnfo"]>
+export type mstcmpnfoOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"rowid" | "cmpcd" | "cmpnm" | "cmpshnm" | "cmpvchcdno" | "cmpadr1" | "cmpadr2" | "cmpctycd" | "cmpzipcd" | "cmpphn" | "cmpfax" | "cmpeml" | "cmpweb" | "cmptinno" | "cmptindt" | "cmptanno" | "cmptandt" | "cmplstno" | "cmplstdt" | "cmpcstno" | "cmpcstdt" | "cmppanno" | "cmppandt" | "cmpstno" | "cmpstdt" | "cmpexno" | "cmpexdt", ExtArgs["result"]["mstcmpnfo"]>
 
 export type $mstcmpnfoPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "mstcmpnfo"
@@ -902,6 +926,7 @@ export type $mstcmpnfoPayload<ExtArgs extends runtime.Types.Extensions.InternalA
     cmpcd: string
     cmpnm: string | null
     cmpshnm: string | null
+    cmpvchcdno: string | null
     cmpadr1: string | null
     cmpadr2: string | null
     cmpctycd: string | null
@@ -1297,6 +1322,7 @@ export interface mstcmpnfoFieldRefs {
   readonly cmpcd: Prisma.FieldRef<"mstcmpnfo", 'String'>
   readonly cmpnm: Prisma.FieldRef<"mstcmpnfo", 'String'>
   readonly cmpshnm: Prisma.FieldRef<"mstcmpnfo", 'String'>
+  readonly cmpvchcdno: Prisma.FieldRef<"mstcmpnfo", 'String'>
   readonly cmpadr1: Prisma.FieldRef<"mstcmpnfo", 'String'>
   readonly cmpadr2: Prisma.FieldRef<"mstcmpnfo", 'String'>
   readonly cmpctycd: Prisma.FieldRef<"mstcmpnfo", 'String'>

@@ -10,4 +10,8 @@
  */
 export type * from './models/mstcmpnfo'
 export type * from './models/mstfinyear'
+export type * from './models/admin'
+export type * from './models/mstState'
+export type * from './models/mstCity'
+export type * from './models/mstStn'
 export type * from './commonInputTypes'

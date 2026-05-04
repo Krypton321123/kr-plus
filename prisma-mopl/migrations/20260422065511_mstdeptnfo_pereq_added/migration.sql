@@ -1,0 +1,24 @@
+BEGIN TRY
+
+BEGIN TRAN;
+
+-- CreateTable
+CREATE TABLE [dbo].[mstdeptprqlink] (
+    [rowid] INT NOT NULL IDENTITY(1,1),
+    [dptcd] NVARCHAR(1000) NOT NULL,
+    [prfcd] NVARCHAR(1000) NOT NULL,
+    CONSTRAINT [mstdeptprqlink_pkey] PRIMARY KEY CLUSTERED ([rowid])
+);
+
+COMMIT TRAN;
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN;
+END;
+THROW
+
+END CATCH

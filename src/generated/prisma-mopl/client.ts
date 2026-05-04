@@ -59,3 +59,243 @@ export type User = Prisma.UserModel
  * 
  */
 export type userCategory = Prisma.userCategoryModel
+/**
+ * Model userScreen
+ * 
+ */
+export type userScreen = Prisma.userScreenModel
+/**
+ * Model userUnit
+ * 
+ */
+export type userUnit = Prisma.userUnitModel
+/**
+ * Model mstMenuConfig
+ * 
+ */
+export type mstMenuConfig = Prisma.mstMenuConfigModel
+/**
+ * Model mstpartycat
+ * 
+ */
+export type mstpartycat = Prisma.mstpartycatModel
+/**
+ * Model mstareanfo
+ * 
+ */
+export type mstareanfo = Prisma.mstareanfoModel
+/**
+ * Model mstdatelocknfo
+ * 
+ */
+export type mstdatelocknfo = Prisma.mstdatelocknfoModel
+/**
+ * Model mstledgrpnfo
+ * 
+ */
+export type mstledgrpnfo = Prisma.mstledgrpnfoModel
+/**
+ * Model mstitmbrdnfo
+ * 
+ */
+export type mstitmbrdnfo = Prisma.mstitmbrdnfoModel
+/**
+ * Model mstitmmaincomnfo
+ * 
+ */
+export type mstitmmaincomnfo = Prisma.mstitmmaincomnfoModel
+/**
+ * Model mstitmcomnfo
+ * 
+ */
+export type mstitmcomnfo = Prisma.mstitmcomnfoModel
+/**
+ * Model mstitmgrpnfo
+ * 
+ */
+export type mstitmgrpnfo = Prisma.mstitmgrpnfoModel
+/**
+ * Model mstitmsubgrpnfo
+ * 
+ */
+export type mstitmsubgrpnfo = Prisma.mstitmsubgrpnfoModel
+/**
+ * Model mstitmuntnfo
+ * 
+ */
+export type mstitmuntnfo = Prisma.mstitmuntnfoModel
+/**
+ * Model mstgwnnfo
+ * 
+ */
+export type mstgwnnfo = Prisma.mstgwnnfoModel
+/**
+ * Model mstgwnitmcomdetnfo
+ * 
+ */
+export type mstgwnitmcomdetnfo = Prisma.mstgwnitmcomdetnfoModel
+/**
+ * Model mstitmtypnfo
+ * 
+ */
+export type mstitmtypnfo = Prisma.mstitmtypnfoModel
+/**
+ * Model mstsyslednfo
+ * 
+ */
+export type mstsyslednfo = Prisma.mstsyslednfoModel
+/**
+ * Model mstitmnfo
+ * 
+ */
+export type mstitmnfo = Prisma.mstitmnfoModel
+/**
+ * Model mstledctnfo
+ * 
+ */
+export type mstledctnfo = Prisma.mstledctnfoModel
+/**
+ * Model mstprqsitsctgsinfo
+ * 
+ */
+export type mstprqsitsctgsinfo = Prisma.mstprqsitsctgsinfoModel
+/**
+ * Model mstrlgnfo
+ * 
+ */
+export type mstrlgnfo = Prisma.mstrlgnfoModel
+/**
+ * Model mstrlgcstnfo
+ * 
+ */
+export type mstrlgcstnfo = Prisma.mstrlgcstnfoModel
+/**
+ * Model mstdeptnfo
+ * 
+ */
+export type mstdeptnfo = Prisma.mstdeptnfoModel
+/**
+ * Model mstdeptprqlink
+ * 
+ */
+export type mstdeptprqlink = Prisma.mstdeptprqlinkModel
+/**
+ * Model mstdsgnfo
+ * 
+ */
+export type mstdsgnfo = Prisma.mstdsgnfoModel
+/**
+ * Model mstempnfo
+ * 
+ */
+export type mstempnfo = Prisma.mstempnfoModel
+/**
+ * Model mstempdetnfo
+ * 
+ */
+export type mstempdetnfo = Prisma.mstempdetnfoModel
+/**
+ * Model mstlednfo
+ * 
+ */
+export type mstlednfo = Prisma.mstlednfoModel
+/**
+ * Model mstledunitlink
+ * 
+ */
+export type mstledunitlink = Prisma.mstledunitlinkModel
+/**
+ * Model mstledcatnfo
+ * 
+ */
+export type mstledcatnfo = Prisma.mstledcatnfoModel
+/**
+ * Model mstuntbanknfo
+ * 
+ */
+export type mstuntbanknfo = Prisma.mstuntbanknfoModel
+/**
+ * Model mstpurprmnfo
+ * 
+ */
+export type mstpurprmnfo = Prisma.mstpurprmnfoModel
+/**
+ * Model mstpurprmdetnfo
+ * 
+ */
+export type mstpurprmdetnfo = Prisma.mstpurprmdetnfoModel
+/**
+ * Model mstadvpernfo
+ * 
+ */
+export type mstadvpernfo = Prisma.mstadvpernfoModel
+/**
+ * Model mstbrkgnfo
+ * 
+ */
+export type mstbrkgnfo = Prisma.mstbrkgnfoModel
+/**
+ * Model mstpocatcomnfo
+ * 
+ */
+export type mstpocatcomnfo = Prisma.mstpocatcomnfoModel
+/**
+ * Model mstpocatcomdetnfo
+ * 
+ */
+export type mstpocatcomdetnfo = Prisma.mstpocatcomdetnfoModel
+/**
+ * Model mstpurbrgnfo
+ * 
+ */
+export type mstpurbrgnfo = Prisma.mstpurbrgnfoModel
+/**
+ * Model mstclmfrnfo
+ * 
+ */
+export type mstclmfrnfo = Prisma.mstclmfrnfoModel
+/**
+ * Model mstclmfrdetnfo
+ * 
+ */
+export type mstclmfrdetnfo = Prisma.mstclmfrdetnfoModel
+/**
+ * Model trnjvnfo
+ * 
+ */
+export type trnjvnfo = Prisma.trnjvnfoModel
+/**
+ * Model trnjvdetnfo
+ * 
+ */
+export type trnjvdetnfo = Prisma.trnjvdetnfoModel
+/**
+ * Model trnpurordnfo
+ * 
+ */
+export type trnpurordnfo = Prisma.trnpurordnfoModel
+/**
+ * Model trnpurordbknnfo
+ * 
+ */
+export type trnpurordbknnfo = Prisma.trnpurordbknnfoModel
+/**
+ * Model trnpurordbkndetnfo
+ * 
+ */
+export type trnpurordbkndetnfo = Prisma.trnpurordbkndetnfoModel
+/**
+ * Model trnpurordbknauditnfo
+ * 
+ */
+export type trnpurordbknauditnfo = Prisma.trnpurordbknauditnfoModel
+/**
+ * Model trnpurordbknauditdetnfo
+ * 
+ */
+export type trnpurordbknauditdetnfo = Prisma.trnpurordbknauditdetnfoModel
+/**
+ * Model trnpurorddetnfo
+ * 
+ */
+export type trnpurorddetnfo = Prisma.trnpurorddetnfoModel

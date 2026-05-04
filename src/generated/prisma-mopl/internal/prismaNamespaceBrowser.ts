@@ -51,7 +51,55 @@ export const AnyNull = runtime.objectEnumValues.instances.AnyNull
 export const ModelName = {
   Unit: 'Unit',
   User: 'User',
-  userCategory: 'userCategory'
+  userCategory: 'userCategory',
+  userScreen: 'userScreen',
+  userUnit: 'userUnit',
+  mstMenuConfig: 'mstMenuConfig',
+  mstpartycat: 'mstpartycat',
+  mstareanfo: 'mstareanfo',
+  mstdatelocknfo: 'mstdatelocknfo',
+  mstledgrpnfo: 'mstledgrpnfo',
+  mstitmbrdnfo: 'mstitmbrdnfo',
+  mstitmmaincomnfo: 'mstitmmaincomnfo',
+  mstitmcomnfo: 'mstitmcomnfo',
+  mstitmgrpnfo: 'mstitmgrpnfo',
+  mstitmsubgrpnfo: 'mstitmsubgrpnfo',
+  mstitmuntnfo: 'mstitmuntnfo',
+  mstgwnnfo: 'mstgwnnfo',
+  mstgwnitmcomdetnfo: 'mstgwnitmcomdetnfo',
+  mstitmtypnfo: 'mstitmtypnfo',
+  mstsyslednfo: 'mstsyslednfo',
+  mstitmnfo: 'mstitmnfo',
+  mstledctnfo: 'mstledctnfo',
+  mstprqsitsctgsinfo: 'mstprqsitsctgsinfo',
+  mstrlgnfo: 'mstrlgnfo',
+  mstrlgcstnfo: 'mstrlgcstnfo',
+  mstdeptnfo: 'mstdeptnfo',
+  mstdeptprqlink: 'mstdeptprqlink',
+  mstdsgnfo: 'mstdsgnfo',
+  mstempnfo: 'mstempnfo',
+  mstempdetnfo: 'mstempdetnfo',
+  mstlednfo: 'mstlednfo',
+  mstledunitlink: 'mstledunitlink',
+  mstledcatnfo: 'mstledcatnfo',
+  mstuntbanknfo: 'mstuntbanknfo',
+  mstpurprmnfo: 'mstpurprmnfo',
+  mstpurprmdetnfo: 'mstpurprmdetnfo',
+  mstadvpernfo: 'mstadvpernfo',
+  mstbrkgnfo: 'mstbrkgnfo',
+  mstpocatcomnfo: 'mstpocatcomnfo',
+  mstpocatcomdetnfo: 'mstpocatcomdetnfo',
+  mstpurbrgnfo: 'mstpurbrgnfo',
+  mstclmfrnfo: 'mstclmfrnfo',
+  mstclmfrdetnfo: 'mstclmfrdetnfo',
+  trnjvnfo: 'trnjvnfo',
+  trnjvdetnfo: 'trnjvdetnfo',
+  trnpurordnfo: 'trnpurordnfo',
+  trnpurordbknnfo: 'trnpurordbknnfo',
+  trnpurordbkndetnfo: 'trnpurordbkndetnfo',
+  trnpurordbknauditnfo: 'trnpurordbknauditnfo',
+  trnpurordbknauditdetnfo: 'trnpurordbknauditdetnfo',
+  trnpurorddetnfo: 'trnpurorddetnfo'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -166,6 +214,788 @@ export const UserCategoryScalarFieldEnum = {
 } as const
 
 export type UserCategoryScalarFieldEnum = (typeof UserCategoryScalarFieldEnum)[keyof typeof UserCategoryScalarFieldEnum]
+
+
+export const UserScreenScalarFieldEnum = {
+  rowid: 'rowid',
+  userId: 'userId',
+  screen: 'screen',
+  viewOnly: 'viewOnly'
+} as const
+
+export type UserScreenScalarFieldEnum = (typeof UserScreenScalarFieldEnum)[keyof typeof UserScreenScalarFieldEnum]
+
+
+export const UserUnitScalarFieldEnum = {
+  rowid: 'rowid',
+  userId: 'userId',
+  unit: 'unit'
+} as const
+
+export type UserUnitScalarFieldEnum = (typeof UserUnitScalarFieldEnum)[keyof typeof UserUnitScalarFieldEnum]
+
+
+export const MstMenuConfigScalarFieldEnum = {
+  rowid: 'rowid',
+  scrcd: 'scrcd',
+  scrnm: 'scrnm',
+  scrlnk: 'scrlnk',
+  scrcat: 'scrcat',
+  scrtyp: 'scrtyp',
+  scrmodcd: 'scrmodcd',
+  scrid: 'scrid',
+  scrpntid: 'scrpntid',
+  oldid: 'oldid'
+} as const
+
+export type MstMenuConfigScalarFieldEnum = (typeof MstMenuConfigScalarFieldEnum)[keyof typeof MstMenuConfigScalarFieldEnum]
+
+
+export const MstpartycatScalarFieldEnum = {
+  rowid: 'rowid',
+  pcatcd: 'pcatcd',
+  pcatnm: 'pcatnm'
+} as const
+
+export type MstpartycatScalarFieldEnum = (typeof MstpartycatScalarFieldEnum)[keyof typeof MstpartycatScalarFieldEnum]
+
+
+export const MstareanfoScalarFieldEnum = {
+  rowid: 'rowid',
+  areacd: 'areacd',
+  untcd: 'untcd',
+  zipcd: 'zipcd',
+  areanm: 'areanm',
+  areactycd: 'areactycd',
+  areaday: 'areaday'
+} as const
+
+export type MstareanfoScalarFieldEnum = (typeof MstareanfoScalarFieldEnum)[keyof typeof MstareanfoScalarFieldEnum]
+
+
+export const MstdatelocknfoScalarFieldEnum = {
+  rowid: 'rowid',
+  lockcd: 'lockcd',
+  untcd: 'untcd',
+  lockdt: 'lockdt',
+  sts: 'sts'
+} as const
+
+export type MstdatelocknfoScalarFieldEnum = (typeof MstdatelocknfoScalarFieldEnum)[keyof typeof MstdatelocknfoScalarFieldEnum]
+
+
+export const MstledgrpnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  ledgrpcd: 'ledgrpcd',
+  ledgrplvlcd: 'ledgrplvlcd',
+  ledgrpnm: 'ledgrpnm',
+  ledgrptyp: 'ledgrptyp',
+  ledgrpid: 'ledgrpid',
+  ledgrppntid: 'ledgrppntid'
+} as const
+
+export type MstledgrpnfoScalarFieldEnum = (typeof MstledgrpnfoScalarFieldEnum)[keyof typeof MstledgrpnfoScalarFieldEnum]
+
+
+export const MstitmbrdnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  itmbrdcd: 'itmbrdcd',
+  itmbrdnm: 'itmbrdnm',
+  itmbrdshnm: 'itmbrdshnm'
+} as const
+
+export type MstitmbrdnfoScalarFieldEnum = (typeof MstitmbrdnfoScalarFieldEnum)[keyof typeof MstitmbrdnfoScalarFieldEnum]
+
+
+export const MstitmmaincomnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  itmmaincomcd: 'itmmaincomcd',
+  itmmaincomnm: 'itmmaincomnm',
+  itmmaincomshnm: 'itmmaincomshnm'
+} as const
+
+export type MstitmmaincomnfoScalarFieldEnum = (typeof MstitmmaincomnfoScalarFieldEnum)[keyof typeof MstitmmaincomnfoScalarFieldEnum]
+
+
+export const MstitmcomnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  itmcomcd: 'itmcomcd',
+  itmcomnm: 'itmcomnm',
+  itmcomshnm: 'itmcomshnm',
+  itmcomtxcd: 'itmcomtxcd',
+  itmmaincomcd: 'itmmaincomcd',
+  itcrate: 'itcrate',
+  stype: 'stype',
+  snature: 'snature',
+  poreq: 'poreq',
+  ratetax: 'ratetax',
+  srcmng: 'srcmng',
+  rateautocalc: 'rateautocalc'
+} as const
+
+export type MstitmcomnfoScalarFieldEnum = (typeof MstitmcomnfoScalarFieldEnum)[keyof typeof MstitmcomnfoScalarFieldEnum]
+
+
+export const MstitmgrpnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  itmgrpcd: 'itmgrpcd',
+  itmgrpnm: 'itmgrpnm',
+  itmgrpshnm: 'itmgrpshnm'
+} as const
+
+export type MstitmgrpnfoScalarFieldEnum = (typeof MstitmgrpnfoScalarFieldEnum)[keyof typeof MstitmgrpnfoScalarFieldEnum]
+
+
+export const MstitmsubgrpnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  itmsubgrpcd: 'itmsubgrpcd',
+  itmsubgrpnm: 'itmsubgrpnm',
+  itmsubgrpshnm: 'itmsubgrpshnm',
+  itmgrpcd: 'itmgrpcd'
+} as const
+
+export type MstitmsubgrpnfoScalarFieldEnum = (typeof MstitmsubgrpnfoScalarFieldEnum)[keyof typeof MstitmsubgrpnfoScalarFieldEnum]
+
+
+export const MstitmuntnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  itmuntcd: 'itmuntcd',
+  itmuntnm: 'itmuntnm',
+  itmuntshnm: 'itmuntshnm'
+} as const
+
+export type MstitmuntnfoScalarFieldEnum = (typeof MstitmuntnfoScalarFieldEnum)[keyof typeof MstitmuntnfoScalarFieldEnum]
+
+
+export const MstgwnnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  untcd: 'untcd',
+  gwncd: 'gwncd',
+  gwnnm: 'gwnnm',
+  gwntyp: 'gwntyp',
+  hgt: 'hgt',
+  rel: 'rel',
+  slsmancd: 'slsmancd',
+  drvcd: 'drvcd',
+  stkcat: 'stkcat',
+  mmlgwncd: 'mmlgwncd'
+} as const
+
+export type MstgwnnfoScalarFieldEnum = (typeof MstgwnnfoScalarFieldEnum)[keyof typeof MstgwnnfoScalarFieldEnum]
+
+
+export const MstgwnitmcomdetnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  gwncd: 'gwncd',
+  itmmaincomcd: 'itmmaincomcd',
+  itmcomcd: 'itmcomcd'
+} as const
+
+export type MstgwnitmcomdetnfoScalarFieldEnum = (typeof MstgwnitmcomdetnfoScalarFieldEnum)[keyof typeof MstgwnitmcomdetnfoScalarFieldEnum]
+
+
+export const MstitmtypnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  itmtypcd: 'itmtypcd',
+  itmtypnm: 'itmtypnm'
+} as const
+
+export type MstitmtypnfoScalarFieldEnum = (typeof MstitmtypnfoScalarFieldEnum)[keyof typeof MstitmtypnfoScalarFieldEnum]
+
+
+export const MstsyslednfoScalarFieldEnum = {
+  rowid: 'rowid',
+  sysledcd: 'sysledcd',
+  syslednm: 'syslednm'
+} as const
+
+export type MstsyslednfoScalarFieldEnum = (typeof MstsyslednfoScalarFieldEnum)[keyof typeof MstsyslednfoScalarFieldEnum]
+
+
+export const MstitmnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  itrmcd: 'itrmcd',
+  itmnm: 'itmnm',
+  itmtypcd: 'itmtypcd',
+  itmgrpcd: 'itmgrpcd',
+  itmsubgrpcd: 'itmsubgrpcd',
+  itmcomcd: 'itmcomcd',
+  itmmaincomcd: 'itmmaincomcd',
+  step: 'step',
+  rateappon: 'rateappon',
+  stkmngin: 'stkmngin',
+  ordmngin: 'ordmngin',
+  autowgtcalc: 'autowgtcalc',
+  wgtconv: 'wgtconv',
+  qtyitmunitcd: 'qtyitmunitcd',
+  wgtitmunitcd: 'wgtitmunitcd',
+  itmcat: 'itmcat',
+  itmsubcat: 'itmsubcat',
+  hsncode: 'hsncode',
+  itmcatgrp: 'itmcatgrp',
+  fillitmcd: 'fillitmcd',
+  itmbrdcd: 'itmbrdcd',
+  lsitmnm: 'lsitmnm',
+  lsitmunt: 'lsitmunt',
+  pcksz: 'pcksz',
+  emtbxwgt: 'emtbxwgt',
+  poreq: 'poreq',
+  smat: 'smat',
+  smatcd: 'smatcd',
+  pur: 'pur',
+  man: 'man',
+  sale: 'sale',
+  cons: 'cons',
+  exc: 'exc',
+  vat: 'vat',
+  kit: 'kit',
+  sttaxcatcd: 'sttaxcatcd',
+  cttaxcatcd: 'cttaxcatcd',
+  deprate: 'deprate',
+  uselife: 'uselife'
+} as const
+
+export type MstitmnfoScalarFieldEnum = (typeof MstitmnfoScalarFieldEnum)[keyof typeof MstitmnfoScalarFieldEnum]
+
+
+export const MstledctnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  ledctcd: 'ledctcd',
+  ledctnm: 'ledctnm',
+  sysledcd: 'sysledcd',
+  ledgrpcd: 'ledgrpcd',
+  ledctshtnm: 'ledctshtnm',
+  itmcomcd: 'itmcomcd',
+  maildet: 'maildet',
+  parentid: 'parentid',
+  hasled: 'hasled',
+  hasparties: 'hasparties',
+  showintrial: 'showintrial',
+  locwisemerge: 'locwisemerge'
+} as const
+
+export type MstledctnfoScalarFieldEnum = (typeof MstledctnfoScalarFieldEnum)[keyof typeof MstledctnfoScalarFieldEnum]
+
+
+export const MstprqsitsctgsinfoScalarFieldEnum = {
+  rowid: 'rowid',
+  prfcd: 'prfcd',
+  ctgname: 'ctgname',
+  valtyp: 'valtyp'
+} as const
+
+export type MstprqsitsctgsinfoScalarFieldEnum = (typeof MstprqsitsctgsinfoScalarFieldEnum)[keyof typeof MstprqsitsctgsinfoScalarFieldEnum]
+
+
+export const MstrlgnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  rlgcd: 'rlgcd',
+  rlgnm: 'rlgnm'
+} as const
+
+export type MstrlgnfoScalarFieldEnum = (typeof MstrlgnfoScalarFieldEnum)[keyof typeof MstrlgnfoScalarFieldEnum]
+
+
+export const MstrlgcstnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  rlgcstcd: 'rlgcstcd',
+  rlgcstnm: 'rlgcstnm',
+  rlgcd: 'rlgcd'
+} as const
+
+export type MstrlgcstnfoScalarFieldEnum = (typeof MstrlgcstnfoScalarFieldEnum)[keyof typeof MstrlgcstnfoScalarFieldEnum]
+
+
+export const MstdeptnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  untcd: 'untcd',
+  dptcd: 'dptcd',
+  dptnm: 'dptnm',
+  empcd: 'empcd',
+  wkoff: 'wkoff',
+  wkoffday: 'wkoffday',
+  almlv: 'almlv',
+  nolv: 'nolv',
+  alflv: 'alflv',
+  alnhd: 'alnhd',
+  ernlv: 'ernlv',
+  dismlv: 'dismlv',
+  eldys: 'eldys',
+  mldys: 'mldys',
+  lnkpt: 'lnkpt',
+  ptcd: 'ptcd',
+  dyshtsttm: 'dyshtsttm',
+  dyshtentm: 'dyshtentm',
+  ntshtsttm: 'ntshtsttm',
+  ntshtentm: 'ntshtentm',
+  ovapp: 'ovapp',
+  hosttm: 'hosttm',
+  hoentm: 'hoentm',
+  horbtm1: 'horbtm1',
+  horbtm2: 'horbtm2',
+  horbtm3: 'horbtm3',
+  horbdy1: 'horbdy1',
+  horbdy2: 'horbdy2',
+  horbdy3: 'horbdy3',
+  horbhrs: 'horbhrs',
+  rbhrsdys: 'rbhrsdys'
+} as const
+
+export type MstdeptnfoScalarFieldEnum = (typeof MstdeptnfoScalarFieldEnum)[keyof typeof MstdeptnfoScalarFieldEnum]
+
+
+export const MstdeptprqlinkScalarFieldEnum = {
+  rowid: 'rowid',
+  dptcd: 'dptcd',
+  prfcd: 'prfcd'
+} as const
+
+export type MstdeptprqlinkScalarFieldEnum = (typeof MstdeptprqlinkScalarFieldEnum)[keyof typeof MstdeptprqlinkScalarFieldEnum]
+
+
+export const MstdsgnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  dsgcd: 'dsgcd',
+  dsgnm: 'dsgnm',
+  dsgcat: 'dsgcat',
+  prntdsgcd: 'prntdsgcd'
+} as const
+
+export type MstdsgnfoScalarFieldEnum = (typeof MstdsgnfoScalarFieldEnum)[keyof typeof MstdsgnfoScalarFieldEnum]
+
+
+export const MstempnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  empcd: 'empcd',
+  untcd: 'untcd',
+  currdt: 'currdt',
+  entrydt: 'entrydt',
+  empnm: 'empnm',
+  fthnm: 'fthnm',
+  gender: 'gender',
+  dob: 'dob',
+  rlgcstcd: 'rlgcstcd',
+  corraddr1: 'corraddr1',
+  corraddr2: 'corraddr2',
+  corrctycd: 'corrctycd',
+  corrareanm: 'corrareanm',
+  corrphno: 'corrphno',
+  peraddr1: 'peraddr1',
+  peraddr2: 'peraddr2',
+  perctycd: 'perctycd',
+  perareanm: 'perareanm',
+  perphno: 'perphno',
+  mobno: 'mobno',
+  email: 'email',
+  prefby: 'prefby',
+  prefctno: 'prefctno',
+  srefby: 'srefby',
+  srefctno: 'srefctno',
+  jointyp: 'jointyp',
+  joindt: 'joindt',
+  dptcd: 'dptcd',
+  dsgcd: 'dsgcd',
+  rptper: 'rptper',
+  paymod: 'paymod',
+  bnkledcd: 'bnkledcd',
+  bnkaccnm: 'bnkaccnm',
+  bnkaccno: 'bnkaccno',
+  bscsal: 'bscsal',
+  tmpgs: 'tmpgs',
+  pfded: 'pfded',
+  empledcd: 'empledcd',
+  isactive: 'isactive'
+} as const
+
+export type MstempnfoScalarFieldEnum = (typeof MstempnfoScalarFieldEnum)[keyof typeof MstempnfoScalarFieldEnum]
+
+
+export const MstempdetnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  empcd: 'empcd',
+  prfcd: 'prfcd',
+  prfval: 'prfval'
+} as const
+
+export type MstempdetnfoScalarFieldEnum = (typeof MstempdetnfoScalarFieldEnum)[keyof typeof MstempdetnfoScalarFieldEnum]
+
+
+export const MstlednfoScalarFieldEnum = {
+  rowid: 'rowid',
+  ledcd: 'ledcd',
+  acccd: 'acccd',
+  ledprfx: 'ledprfx',
+  lednm: 'lednm',
+  ledrptnm: 'ledrptnm',
+  ledchqnm: 'ledchqnm',
+  buntcd: 'buntcd',
+  ledcrtdt: 'ledcrtdt',
+  ledsts: 'ledsts',
+  pcatcd: 'pcatcd',
+  per1prfx: 'per1prfx',
+  ctper1: 'ctper1',
+  per2prfx: 'per2prfx',
+  ctper2: 'ctper2',
+  cntno1: 'cntno1',
+  cntno2: 'cntno2',
+  ledadr1: 'ledadr1',
+  ctycd: 'ctycd',
+  pincd: 'pincd',
+  areacd: 'areacd',
+  loccd: 'loccd',
+  ledadr2: 'ledadr2',
+  ctycd2: 'ctycd2',
+  pincd2: 'pincd2',
+  email: 'email',
+  phone: 'phone',
+  mobile: 'mobile',
+  fax: 'fax',
+  paytyp: 'paytyp',
+  bnkledcd: 'bnkledcd',
+  stncd: 'stncd',
+  accno: 'accno',
+  paystncd: 'paystncd',
+  rtgsno: 'rtgsno',
+  cstno: 'cstno',
+  cstdt: 'cstdt',
+  lstno: 'lstno',
+  lstdt: 'lstdt',
+  tinno: 'tinno',
+  tindt: 'tindt',
+  tanno: 'tanno',
+  tandt: 'tandt',
+  panno: 'panno',
+  pandt: 'pandt',
+  stxno: 'stxno',
+  stxdt: 'stxdt',
+  ledtyp: 'ledtyp',
+  lmtamt: 'lmtamt',
+  consdays: 'consdays',
+  bulkdays: 'bulkdays',
+  othdays: 'othdays',
+  rof: 'rof',
+  exmpt: 'exmpt',
+  empcd: 'empcd',
+  mmlledcd: 'mmlledcd',
+  aadharno: 'aadharno',
+  aadharphoto: 'aadharphoto',
+  pancardphoto: 'pancardphoto',
+  gstcertphoto: 'gstcertphoto'
+} as const
+
+export type MstlednfoScalarFieldEnum = (typeof MstlednfoScalarFieldEnum)[keyof typeof MstlednfoScalarFieldEnum]
+
+
+export const MstledunitlinkScalarFieldEnum = {
+  rowid: 'rowid',
+  ledcd: 'ledcd',
+  untcd: 'untcd'
+} as const
+
+export type MstledunitlinkScalarFieldEnum = (typeof MstledunitlinkScalarFieldEnum)[keyof typeof MstledunitlinkScalarFieldEnum]
+
+
+export const MstledcatnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  ledcd: 'ledcd',
+  ledctcd: 'ledctcd'
+} as const
+
+export type MstledcatnfoScalarFieldEnum = (typeof MstledcatnfoScalarFieldEnum)[keyof typeof MstledcatnfoScalarFieldEnum]
+
+
+export const MstuntbanknfoScalarFieldEnum = {
+  rowid: 'rowid',
+  untcd: 'untcd',
+  untwbcd: 'untwbcd',
+  frmdt: 'frmdt',
+  bankledcd: 'bankledcd',
+  hountcd: 'hountcd',
+  entusrnm: 'entusrnm',
+  entdt: 'entdt'
+} as const
+
+export type MstuntbanknfoScalarFieldEnum = (typeof MstuntbanknfoScalarFieldEnum)[keyof typeof MstuntbanknfoScalarFieldEnum]
+
+
+export const MstpurprmnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  untcd: 'untcd',
+  prmcd: 'prmcd',
+  itmcomcd: 'itmcomcd',
+  fromdt: 'fromdt',
+  toDt: 'toDt',
+  sts: 'sts'
+} as const
+
+export type MstpurprmnfoScalarFieldEnum = (typeof MstpurprmnfoScalarFieldEnum)[keyof typeof MstpurprmnfoScalarFieldEnum]
+
+
+export const MstpurprmdetnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  prmcd: 'prmcd',
+  cndprmnm: 'cndprmnm',
+  cndprmtyp: 'cndprmtyp',
+  inpprmnm: 'inpprmnm',
+  valtyp: 'valtyp',
+  clcon: 'clcon',
+  prcusd: 'prcusd'
+} as const
+
+export type MstpurprmdetnfoScalarFieldEnum = (typeof MstpurprmdetnfoScalarFieldEnum)[keyof typeof MstpurprmdetnfoScalarFieldEnum]
+
+
+export const MstadvpernfoScalarFieldEnum = {
+  rowid: 'rowid',
+  untcd: 'untcd',
+  advpercd: 'advpercd',
+  itmcomcd: 'itmcomcd',
+  frmdt: 'frmdt',
+  todt: 'todt',
+  advper: 'advper',
+  entusrnm: 'entusrnm',
+  entdt: 'entdt'
+} as const
+
+export type MstadvpernfoScalarFieldEnum = (typeof MstadvpernfoScalarFieldEnum)[keyof typeof MstadvpernfoScalarFieldEnum]
+
+
+export const MstbrkgnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  brkgcd: 'brkgcd',
+  untcd: 'untcd',
+  brkrgtyp: 'brkrgtyp',
+  vfrom: 'vfrom',
+  vto: 'vto',
+  brkledcd: 'brkledcd',
+  itmcomcd: 'itmcomcd',
+  pbrkgtyp: 'pbrkgtyp',
+  pbrkgval: 'pbrkgval',
+  mbrkgtyp: 'mbrkgtyp',
+  mbrkgval: 'mbrkgval',
+  slbrkgval: 'slbrkgval',
+  sts: 'sts'
+} as const
+
+export type MstbrkgnfoScalarFieldEnum = (typeof MstbrkgnfoScalarFieldEnum)[keyof typeof MstbrkgnfoScalarFieldEnum]
+
+
+export const MstpocatcomnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  untcd: 'untcd',
+  pocatcomcd: 'pocatcomcd',
+  pocatcomnm: 'pocatcomnm',
+  prmcd: 'prmcd',
+  cattyp: 'cattyp',
+  itmcomcd: 'itmcomcd',
+  fromdt: 'fromdt',
+  todt: 'todt',
+  wgtreq: 'wgtreq',
+  shtdis: 'shtdis',
+  duedys: 'duedys',
+  duedyscng: 'duedyscng',
+  smat: 'smat',
+  frghttyp: 'frghttyp',
+  billdiff_ded: 'billdiff_ded',
+  shortage_ded: 'shortage_ded',
+  bill_type: 'bill_type',
+  conddesc: 'conddesc'
+} as const
+
+export type MstpocatcomnfoScalarFieldEnum = (typeof MstpocatcomnfoScalarFieldEnum)[keyof typeof MstpocatcomnfoScalarFieldEnum]
+
+
+export const MstpocatcomdetnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  pocatcomcd: 'pocatcomcd',
+  cndprmnm: 'cndprmnm',
+  cmnprmval: 'cmnprmval',
+  cndprmded: 'cndprmded',
+  cndprmrate: 'cndprmrate'
+} as const
+
+export type MstpocatcomdetnfoScalarFieldEnum = (typeof MstpocatcomdetnfoScalarFieldEnum)[keyof typeof MstpocatcomdetnfoScalarFieldEnum]
+
+
+export const MstpurbrgnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  untcd: 'untcd',
+  purbrgcd: 'purbrgcd',
+  purbrgdt: 'purbrgdt',
+  pocatcomcd: 'pocatcomcd',
+  itmcd: 'itmcd',
+  brgqty: 'brgqty',
+  brgrate: 'brgrate',
+  conddays: 'conddays',
+  condrate: 'condrate',
+  mblbrg: 'mblbrg',
+  apprateid: 'apprateid',
+  sts: 'sts'
+} as const
+
+export type MstpurbrgnfoScalarFieldEnum = (typeof MstpurbrgnfoScalarFieldEnum)[keyof typeof MstpurbrgnfoScalarFieldEnum]
+
+
+export const MstclmfrnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  untcd: 'untcd',
+  fyear: 'fyear',
+  frcd: 'frcd',
+  itmcomcd: 'itmcomcd',
+  fromdt: 'fromdt',
+  todt: 'todt',
+  sts: 'sts'
+} as const
+
+export type MstclmfrnfoScalarFieldEnum = (typeof MstclmfrnfoScalarFieldEnum)[keyof typeof MstclmfrnfoScalarFieldEnum]
+
+
+export const MstclmfrdetnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  frcd: 'frcd',
+  frdesc: 'frdesc',
+  cndprmnm: 'cndprmnm',
+  inpprmnm: 'inpprmnm',
+  hidezero: 'hidezero',
+  clcdisp: 'clcdisp',
+  frdet: 'frdet'
+} as const
+
+export type MstclmfrdetnfoScalarFieldEnum = (typeof MstclmfrdetnfoScalarFieldEnum)[keyof typeof MstclmfrdetnfoScalarFieldEnum]
+
+
+export const TrnjvnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  untcd: 'untcd',
+  jvcd: 'jvcd',
+  jvdt: 'jvdt',
+  mode: 'mode'
+} as const
+
+export type TrnjvnfoScalarFieldEnum = (typeof TrnjvnfoScalarFieldEnum)[keyof typeof TrnjvnfoScalarFieldEnum]
+
+
+export const TrnjvdetnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  jvcd: 'jvcd',
+  ledcd: 'ledcd',
+  lednarr: 'lednarr',
+  amtdr: 'amtdr',
+  amtcr: 'amtcr'
+} as const
+
+export type TrnjvdetnfoScalarFieldEnum = (typeof TrnjvdetnfoScalarFieldEnum)[keyof typeof TrnjvdetnfoScalarFieldEnum]
+
+
+export const TrnpurordnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  untcd: 'untcd',
+  pocd: 'pocd',
+  catpocd: 'catpocd',
+  ptypocd: 'ptypocd',
+  brkpocd: 'brkpocd',
+  pocatcomcd: 'pocatcomcd',
+  posupcatcd: 'posupcatcd',
+  podt: 'podt',
+  potyp: 'potyp',
+  posupat: 'posupat',
+  poptyledcd: 'poptyledcd',
+  pobrkledcd: 'pobrkledcd',
+  socd: 'socd',
+  pofrttyp: 'pofrttyp',
+  frgt: 'frgt',
+  validdt: 'validdt',
+  custledcd: 'custledcd',
+  pobknauditcd: 'pobknauditcd',
+  remark: 'remark',
+  dlydt: 'dlydt'
+} as const
+
+export type TrnpurordnfoScalarFieldEnum = (typeof TrnpurordnfoScalarFieldEnum)[keyof typeof TrnpurordnfoScalarFieldEnum]
+
+
+export const TrnpurordbknnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  untcd: 'untcd',
+  pobkncd: 'pobkncd',
+  pobkndt: 'pobkndt',
+  dlydt: 'dlydt',
+  pocatcomcd: 'pocatcomcd',
+  valdt: 'valdt',
+  purbrgcd: 'purbrgcd',
+  frmcd: 'frmcd',
+  supat: 'supat',
+  custledcd: 'custledcd',
+  socd: 'socd',
+  usrnm: 'usrnm',
+  remark: 'remark',
+  apporderid: 'apporderid'
+} as const
+
+export type TrnpurordbknnfoScalarFieldEnum = (typeof TrnpurordbknnfoScalarFieldEnum)[keyof typeof TrnpurordbknnfoScalarFieldEnum]
+
+
+export const TrnpurordbkndetnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  pobkncd: 'pobkncd',
+  ptyledcd: 'ptyledcd',
+  brkrledcd: 'brkrledcd',
+  nof: 'nof',
+  itmcd: 'itmcd',
+  qty: 'qty',
+  wgt: 'wgt',
+  frgttyp: 'frgttyp',
+  ratetyp: 'ratetyp',
+  frgt: 'frgt',
+  rate: 'rate'
+} as const
+
+export type TrnpurordbkndetnfoScalarFieldEnum = (typeof TrnpurordbkndetnfoScalarFieldEnum)[keyof typeof TrnpurordbkndetnfoScalarFieldEnum]
+
+
+export const TrnpurordbknauditnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  untcd: 'untcd',
+  pobknauditcd: 'pobknauditcd',
+  pobknauditdt: 'pobknauditdt',
+  pobkncd: 'pobkncd',
+  usrnm: 'usrnm',
+  sts: 'sts',
+  reason: 'reason'
+} as const
+
+export type TrnpurordbknauditnfoScalarFieldEnum = (typeof TrnpurordbknauditnfoScalarFieldEnum)[keyof typeof TrnpurordbknauditnfoScalarFieldEnum]
+
+
+export const TrnpurordbknauditdetnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  pobknauditcd: 'pobknauditcd',
+  ptyledcd: 'ptyledcd',
+  brkrledcd: 'brkrledcd',
+  nof: 'nof',
+  itmcd: 'itmcd',
+  qty: 'qty',
+  wgt: 'wgt',
+  frgttyp: 'frgttyp',
+  ratetyp: 'ratetyp',
+  frgt: 'frgt',
+  rate: 'rate'
+} as const
+
+export type TrnpurordbknauditdetnfoScalarFieldEnum = (typeof TrnpurordbknauditdetnfoScalarFieldEnum)[keyof typeof TrnpurordbknauditdetnfoScalarFieldEnum]
+
+
+export const TrnpurorddetnfoScalarFieldEnum = {
+  rowid: 'rowid',
+  pocd: 'pocd',
+  poitmcd: 'poitmcd',
+  poqty: 'poqty',
+  powgt: 'powgt',
+  porate: 'porate',
+  ratetyp: 'ratetyp'
+} as const
+
+export type TrnpurorddetnfoScalarFieldEnum = (typeof TrnpurorddetnfoScalarFieldEnum)[keyof typeof TrnpurorddetnfoScalarFieldEnum]
 
 
 export const SortOrder = {

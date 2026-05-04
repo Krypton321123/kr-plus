@@ -1,0 +1,25 @@
+BEGIN TRY
+
+BEGIN TRAN;
+
+-- CreateTable
+CREATE TABLE [dbo].[mstempdetnfo] (
+    [rowid] INT NOT NULL IDENTITY(1,1),
+    [empcd] NVARCHAR(1000) NOT NULL,
+    [prfcd] NVARCHAR(1000) NOT NULL,
+    [prfval] NVARCHAR(1000) NOT NULL,
+    CONSTRAINT [mstempdetnfo_pkey] PRIMARY KEY CLUSTERED ([rowid])
+);
+
+COMMIT TRAN;
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN;
+END;
+THROW
+
+END CATCH

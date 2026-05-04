@@ -18,20 +18,20 @@ export function TabBar() {
     const { tabs, active, setActive, closeTab } = useTabStore()
 
     return (
-        <div className="fixed top-12 left-[220px] right-0 h-10 z-40 bg-white border-b border-[#E8E6E1] flex items-end overflow-x-auto px-2 gap-0.5 scrollbar-none">
+        <div className="fixed top-12 left-55 right-0 h-10 z-40 bg-white border-b border-[#E8E6E1] flex items-end overflow-x-auto px-2 gap-0.5 scrollbar-none">
             {tabs.map(tab => {
                 const isActive = tab.id === active
                 return (
                     <div
                         key={tab.id}
                         onClick={() => setActive(tab.id)}
-                        className={`group flex items-center gap-1.5 px-3 h-8 rounded-t-md cursor-pointer flex-shrink-0 text-[12px] font-normal border border-transparent border-b-0 select-none transition-all duration-150 relative bottom-[-1px]
+                        className={`group flex items-center gap-1.5 px-3 h-8 rounded-t-md cursor-pointer shrink-0 text-[12px] font-normal border border-transparent border-b-0 select-none transition-all duration-150 relative -bottom-px
                             ${isActive
                                 ? "bg-white text-[#1a1a1a] font-medium border-[#E8E6E1] border-b-white"
                                 : "text-[#888] hover:text-[#1a1a1a] hover:bg-[#F5F4F0]"
                             }`}
                     >
-                        <span className="flex-shrink-0 opacity-60">
+                        <span className="shrink-0 opacity-60">
                             {tab.id === "home" ? <HomeIcon /> : <PageIcon />}
                         </span>
                         <span>{tab.label}</span>

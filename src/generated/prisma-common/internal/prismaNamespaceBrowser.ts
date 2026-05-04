@@ -50,7 +50,11 @@ export const AnyNull = runtime.objectEnumValues.instances.AnyNull
 
 export const ModelName = {
   mstcmpnfo: 'mstcmpnfo',
-  mstfinyear: 'mstfinyear'
+  mstfinyear: 'mstfinyear',
+  admin: 'admin',
+  mstState: 'mstState',
+  mstCity: 'mstCity',
+  mstStn: 'mstStn'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -75,6 +79,7 @@ export const MstcmpnfoScalarFieldEnum = {
   cmpcd: 'cmpcd',
   cmpnm: 'cmpnm',
   cmpshnm: 'cmpshnm',
+  cmpvchcdno: 'cmpvchcdno',
   cmpadr1: 'cmpadr1',
   cmpadr2: 'cmpadr2',
   cmpctycd: 'cmpctycd',
@@ -111,6 +116,46 @@ export const MstfinyearScalarFieldEnum = {
 } as const
 
 export type MstfinyearScalarFieldEnum = (typeof MstfinyearScalarFieldEnum)[keyof typeof MstfinyearScalarFieldEnum]
+
+
+export const AdminScalarFieldEnum = {
+  id: 'id',
+  username: 'username',
+  password: 'password',
+  createdAt: 'createdAt'
+} as const
+
+export type AdminScalarFieldEnum = (typeof AdminScalarFieldEnum)[keyof typeof AdminScalarFieldEnum]
+
+
+export const MstStateScalarFieldEnum = {
+  rowid: 'rowid',
+  stcd: 'stcd',
+  stnm: 'stnm',
+  stshnm: 'stshnm'
+} as const
+
+export type MstStateScalarFieldEnum = (typeof MstStateScalarFieldEnum)[keyof typeof MstStateScalarFieldEnum]
+
+
+export const MstCityScalarFieldEnum = {
+  rowid: 'rowid',
+  ctycd: 'ctycd',
+  ctynm: 'ctynm',
+  ctystcd: 'ctystcd',
+  ctystncd: 'ctystncd'
+} as const
+
+export type MstCityScalarFieldEnum = (typeof MstCityScalarFieldEnum)[keyof typeof MstCityScalarFieldEnum]
+
+
+export const MstStnScalarFieldEnum = {
+  rowid: 'rowid',
+  stncd: 'stncd',
+  stnnm: 'stnnm'
+} as const
+
+export type MstStnScalarFieldEnum = (typeof MstStnScalarFieldEnum)[keyof typeof MstStnScalarFieldEnum]
 
 
 export const SortOrder = {

@@ -1,0 +1,30 @@
+BEGIN TRY
+
+BEGIN TRAN;
+
+-- CreateTable
+CREATE TABLE [dbo].[mstadvpernfo] (
+    [rowid] INT NOT NULL IDENTITY(1,1),
+    [untcd] NVARCHAR(1000) NOT NULL,
+    [advpercd] NVARCHAR(1000) NOT NULL,
+    [itmcomcd] NVARCHAR(1000) NOT NULL,
+    [frmdt] DATETIME2 NOT NULL,
+    [todt] DATETIME2 NOT NULL,
+    [advper] NVARCHAR(1000) NOT NULL,
+    [entusrnm] NVARCHAR(1000) NOT NULL,
+    [entdt] DATETIME2 NOT NULL,
+    CONSTRAINT [mstadvpernfo_pkey] PRIMARY KEY CLUSTERED ([rowid])
+);
+
+COMMIT TRAN;
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN;
+END;
+THROW
+
+END CATCH

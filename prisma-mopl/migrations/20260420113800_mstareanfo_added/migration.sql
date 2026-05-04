@@ -1,0 +1,27 @@
+BEGIN TRY
+
+BEGIN TRAN;
+
+-- CreateTable
+CREATE TABLE [dbo].[mstareanfo] (
+    [rowid] INT NOT NULL IDENTITY(1,1),
+    [areacd] NVARCHAR(1000) NOT NULL,
+    [untcd] NVARCHAR(1000) NOT NULL,
+    [zipcd] NVARCHAR(1000) NOT NULL,
+    [areanm] NVARCHAR(1000) NOT NULL,
+    [areactycd] NVARCHAR(1000) NOT NULL,
+    CONSTRAINT [mstareanfo_pkey] PRIMARY KEY CLUSTERED ([rowid])
+);
+
+COMMIT TRAN;
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN;
+END;
+THROW
+
+END CATCH

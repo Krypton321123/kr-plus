@@ -58,7 +58,8 @@ export const authRouter = router({
                     locationCode: user.bseuntcd,
                     cmpCode: input.cmpCode,
                     finYear: input.finYear,
-                    cmpName: company.cmpnm
+                    cmpName: company.cmpnm,
+                    rowid: user.rowid
                 }
             };
         }
