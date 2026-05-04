@@ -1,6 +1,7 @@
 generator client {
   provider = "prisma-client"
   output   = "../src/generated/prisma-mopl"
+  binaryTargets = ["native", "windows"] 
 }
 
 datasource db {
