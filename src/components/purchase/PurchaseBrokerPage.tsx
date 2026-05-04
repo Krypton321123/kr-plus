@@ -9,7 +9,7 @@ import { trpc } from "@/app/_trpc/client";
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface Unit { untcd: string; untnm: string; }
 interface Commodity { itmcomcd: string; itmcomnm: string; }
-interface Broker { ledcd: string; lednm: string; }
+interface Broker { ledcd: string; lednm: string  | null}; 
 
 type BrkgTyp = "On Qty" | "On Weight";
 const BRKG_TYPE_OPTIONS: BrkgTyp[] = ["On Qty", "On Weight"];
@@ -227,8 +227,8 @@ export default function PurchaseBrokeragePage({
   const { data: brokers = [] } = trpc.brkg.getBrokers.useQuery();
   const { data: records = [], refetch } = trpc.brkg.getAll.useQuery({ brkrgtyp });
 
-  const createMutation = trpc.brkg.create.useMutation({ onSuccess: () => refetch() });
-  const updateMutation = trpc.brkg.update.useMutation({ onSuccess: () => refetch() });
+  const createMutation: any = trpc.brkg.create.useMutation({ onSuccess: () => refetch() });
+  const updateMutation: any = trpc.brkg.update.useMutation({ onSuccess: () => refetch() });
   const deleteMutation = trpc.brkg.delete.useMutation({ onSuccess: () => refetch() });
   const toggleMutation = trpc.brkg.toggleStatus.useMutation({ onSuccess: () => refetch() });
 
@@ -405,7 +405,7 @@ export default function PurchaseBrokeragePage({
                   <CustomCombobox<Broker>
                     items={brokers} value={form.broker}
                     onValueChange={(v) => setF("broker", v)}
-                    getLabel={(b) => b.lednm} getKey={(b) => b.ledcd}
+                    getLabel={(b) => b.lednm ?? ""} getKey={(b) => b.ledcd}
                     placeholder="Select broker…" hasError={!!errors.broker}
                   />
                   {errors.broker && <p className="text-[11px] text-red-500 mt-1">{errors.broker}</p>}

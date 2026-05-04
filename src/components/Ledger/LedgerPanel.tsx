@@ -445,7 +445,7 @@ function useDocUpload(
 ) {
   const [uploading, setUploading] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef: any = useRef<HTMLInputElement>(null);
 
   const trigger = () => inputRef.current?.click();
 

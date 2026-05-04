@@ -1052,14 +1052,14 @@ export function JournalVoucherContent() {
               </tr>
             </thead>
             <tbody>
-              {(allJvs as SavedJV[]).length === 0 ? (
+              {(allJvs as any).length === 0 ? (
                 <tr>
                   <td colSpan={6} className="px-4 py-10 text-center text-[12px] text-[#ccc]">
                     No journal vouchers saved yet
                   </td>
                 </tr>
               ) : (
-                (allJvs as SavedJV[]).map((jv, idx) => {
+                (allJvs as any).map((jv: any, idx: any) => {
                   const isExpanded = expandedJvcd === jv.jvcd;
                   return (
                     <>

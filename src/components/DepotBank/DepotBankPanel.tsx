@@ -102,7 +102,7 @@ export function DepotBankPanelContent() {
 
   // ── Location change: clear all local edits ────────────────────────────
 
-  const handleLocationChange = (val: string | undefined) => {
+  const handleLocationChange = (val: any) => {
     setSelectedUntcd(val ?? "");
     setRemovedRowids(new Set());
     setPendingRows([]);

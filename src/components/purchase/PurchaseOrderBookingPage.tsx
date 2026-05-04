@@ -533,7 +533,7 @@ export default function PurchaseOrderBookingPage() {
                         <div className="grid grid-cols-2 gap-x-8 gap-y-4">
                           <Field label="Category">
                             <CustomCombobox
-                              items={categories as CategoryItem[]}
+                              items={categories as any}
                               value={selectedCategory}
                               onValueChange={v => setSelectedCategory(v)}
                               getLabel={c => c.pocatcomnm}
